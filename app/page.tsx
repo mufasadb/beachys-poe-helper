@@ -29,10 +29,10 @@ export default function Home() {
         />
         
         <FeatureCard
-          title="League Start Templates"
-          description="Copy-paste configs for quick setup"
-          href="/templates"
-          icon="🚀"
+          title="Search Templates"
+          description="Copy-paste trade search strings for boots and gear"
+          href="/search-templates"
+          icon="🔍"
         />
         
         <FeatureCard
@@ -54,6 +54,13 @@ export default function Home() {
           description="Tips, guides, and helpful images"
           href="/resources"
           icon="💡"
+        />
+        
+        <FeatureCard
+          title="Vendor Recipes"
+          description="Essential vendor recipes for currency and equipment"
+          href="/vendor-recipes"
+          icon="⚖️"
         />
       </div>
     </main>
