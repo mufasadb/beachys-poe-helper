@@ -1,4 +1,25 @@
-# Claude Code Guidelines for Beachies Uploader
+# Claude Code Guidelines for Beachy's POE Helper
+
+## Project Description
+Beachy's POE Helper is a comprehensive Path of Exile assistant application designed to provide essential tools and resources for players at league start and throughout their gameplay. The application serves as a centralized hub for:
+
+- **AutoHotkey Scripts**: Host and distribute AHK scripts for common POE tasks with easy download functionality
+- **Build Management**: Display and organize build lists (potentially integrating with POE Ninja for dynamic updates)
+- **Item Filters**: Host and manage popular loot filters for easy access
+- **League Start Templates**: Provide copy-paste templates for common league start setups
+- **POE Dashboard**: Central hub linking to essential external tools and resources
+- **Lab Layouts**: Display daily labyrinth layouts for efficient farming
+- **Community Resources**: Curated collection of helpful tips, guides, and images from the POE community
+- **Monetization**: Subtle ad integration to support hosting costs
+
+The application aims to consolidate frequently-used POE tools and resources that players typically bookmark or search for at each league start, providing a streamlined experience for both new and veteran players.
+
+## Technical Architecture
+- **Frontend**: Modern web application with responsive design
+- **Backend**: API for serving scripts, filters, and dynamic content
+- **Storage**: File hosting for scripts, filters, and static resources
+- **Deployment**: Containerized application deployed on AWS (EC2/ECS/App Runner)
+- **External Integrations**: POE Ninja API for build data, potential integration with lab layout services
 
 ## Partnership Approach
 Claude Code should act as a thoughtful development partner, not just executing instructions blindly. Always:
@@ -36,27 +57,19 @@ Maintain a `current-todo.md` file that:
 - Should be updated in real-time as tasks progress
 - Includes both immediate next steps and broader project goals
 
-## Project Setup & Deployment
-### Initial Setup
-- Start each new project by setting up a GitHub repository
-- Setup Docker Hub project for containerized deployment
-- Configure for Unraid deployment
-- Ask the user to describe the app in as much detail as is practical, update the claud md document with a project description. Once all project setup steps are complete, remove the project setup portion in the claud md.
-- use create-docker-image $docker-image-name 
-
-### Feature Completion
+## Feature Completion
 - Before pushing confirm that no api keys are going into the repo, update git ignore if need be
 - Commit and push all completed features to GitHub
 - Ensure Docker images are built and pushed to Docker Hub
 
 ### Documentation Requirements
 README must include:
-- Container paths and volume mappings
 - Environment variables and configuration
-- Unraid-specific deployment instructions
+- AWS deployment instructions
 - Port mappings and networking requirements
 
 ## Commands
-- Test command: [To be determined based on project setup]
-- Lint command: [To be determined based on project setup]
-- Build command: [To be determined based on project setup]
+- Test command: `npm test`
+- Lint command: `npm run lint`
+- Build command: `npm run build`
+- Dev server: `npm run dev`
