@@ -29,8 +29,8 @@ export default function Home() {
         />
         
         <FeatureCard
-          title="Search Templates"
-          description="Copy-paste trade search strings for boots and gear"
+          title="Vendor Search Templates"
+          description="Copy-paste regex patterns for vendor inventory searches"
           href="/search-templates"
           icon="🔍"
         />

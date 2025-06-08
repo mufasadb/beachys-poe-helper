@@ -5,8 +5,14 @@ export default function SearchTemplates() {
   return (
     <main className="min-h-screen p-8 max-w-7xl mx-auto">
       <header className="mb-8">
-        <h1 className="text-4xl font-bold text-poe-gold mb-4">Search Templates</h1>
-        <p className="text-xl text-gray-300">Copy-paste search strings for the official POE trade site</p>
+        <h1 className="text-4xl font-bold text-poe-gold mb-4">Vendor Search Templates</h1>
+        <p className="text-xl text-gray-300">Copy-paste regex patterns for vendor inventory searches (3.14+ feature)</p>
+        <div className="mt-4 p-4 bg-gray-800 border border-poe-gold rounded-lg">
+          <p className="text-sm text-gray-300">
+            <strong className="text-poe-gold">How to use:</strong> Copy the pattern and paste it into the vendor search box (ctrl+v). 
+            Items matching the pattern will be highlighted with a yellow border.
+          </p>
+        </div>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -27,38 +33,38 @@ function MovementSpeedBoots() {
   const bootSearches = [
     {
       name: "MS Boots - 3 Blue Sockets",
-      description: "Movement speed boots with 3 blue sockets",
-      searchString: `type:boots stat:move socket:3B`
+      description: "Movement speed boots with 3 blue sockets (vendor regex)",
+      searchString: `"nt speed".*"b-b-b"`
     },
     {
       name: "MS Boots - 3 Green Sockets", 
-      description: "Movement speed boots with 3 green sockets",
-      searchString: `type:boots stat:move socket:3G`
+      description: "Movement speed boots with 3 green sockets (vendor regex)",
+      searchString: `"nt speed".*"g-g-g"`
     },
     {
       name: "MS Boots - 3 Red Sockets",
-      description: "Movement speed boots with 3 red sockets", 
-      searchString: `type:boots stat:move socket:3R`
+      description: "Movement speed boots with 3 red sockets (vendor regex)", 
+      searchString: `"nt speed".*"r-r-r"`
     },
     {
       name: "MS Boots - 2 Blue 1 Green",
-      description: "Movement speed boots with 2 blue, 1 green socket",
-      searchString: `type:boots stat:move socket:2B1G`
+      description: "Movement speed boots with 2 blue, 1 green socket (vendor regex)",
+      searchString: `"nt speed".*"b-b-g|g-b-b|b-g-b"`
     },
     {
       name: "MS Boots - 2 Green 1 Blue",
-      description: "Movement speed boots with 2 green, 1 blue socket",
-      searchString: `type:boots stat:move socket:2G1B`
+      description: "Movement speed boots with 2 green, 1 blue socket (vendor regex)",
+      searchString: `"nt speed".*"g-g-b|b-g-g|g-b-g"`
     },
     {
       name: "MS Boots - 2 Red 1 Green", 
-      description: "Movement speed boots with 2 red, 1 green socket",
-      searchString: `type:boots stat:move socket:2R1G`
+      description: "Movement speed boots with 2 red, 1 green socket (vendor regex)",
+      searchString: `"nt speed".*"r-r-g|g-r-r|r-g-r"`
     },
     {
       name: "MS Boots - 2 Green 1 Red",
-      description: "Movement speed boots with 2 green, 1 red socket", 
-      searchString: `type:boots stat:move socket:2G1R`
+      description: "Movement speed boots with 2 green, 1 red socket (vendor regex)", 
+      searchString: `"nt speed".*"g-g-r|r-g-g|g-r-g"`
     }
   ]
 
@@ -107,24 +113,34 @@ function GenericSearches() {
 
   const genericSearches = [
     {
-      name: "Life + Resistance Gear",
-      description: "Items with life and resistances",
-      searchString: `stat:life stat:resistance`
+      name: "Chaos Recipe Items (60-74)",
+      description: "Rare items level 60-74 for chaos recipe",
+      searchString: `"rare".*"item level: ([6][0-9]|[7][0-4])"`
     },
     {
       name: "6-Link Items",
       description: "Items with 6 linked sockets",
-      searchString: `socket:6L`
+      searchString: `"sockets: ([rgbw]-?){6}"`
     },
     {
-      name: "High Life Rolls",
-      description: "Items with 70+ life",
-      searchString: `stat:70life`
+      name: "6-Socket Items",
+      description: "Items with 6 sockets (vendor for 7 jewellers)",
+      searchString: `"sockets: ([rgbw].?){6}"`
     },
     {
-      name: "Tabula Rasa",
-      description: "6-link white chest piece",
-      searchString: `name:"Tabula Rasa"`
+      name: "Quality 10%+ Items",
+      description: "Items with 10%+ quality",
+      searchString: `"quality: \\+([1-9][0-9])"`
+    },
+    {
+      name: "RGB Linked Items", 
+      description: "Items with red-green-blue linked for chromatic orb",
+      searchString: `"r-g-b|r-b-g|g-r-b|g-b-r|b-r-g|b-g-r"`
+    },
+    {
+      name: "High Life Items (70+)",
+      description: "Items with 70+ life rolls",
+      searchString: `"([1-9]\\d{2,}|[7-9]\\d).+life"`
     }
   ]
 
