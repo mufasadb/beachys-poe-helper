@@ -3,7 +3,11 @@
     "allow": [
       "Bash(mkdir:*)",
       "Bash(ls:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(file:*)",
+      "WebFetch(domain:docs.google.com)",
+      "Bash(npm install:*)",
+      "Bash(npm audit:*)"
     ],
     "deny": []
   }
