@@ -50,10 +50,10 @@ export default function Home() {
         />
         
         <FeatureCard
-          title="Community Resources"
-          description="Tips, guides, and helpful images"
-          href="/resources"
-          icon="💡"
+          title="Cheat Sheets"
+          description="Community-compiled quick reference guides"
+          href="/cheat-sheets"
+          icon="📋"
         />
         
         <FeatureCard
