@@ -23,7 +23,7 @@ export default function Home() {
         
         <FeatureCard
           title="Item Filters"
-          description="Access popular loot filters"
+          description="FilterBlade-compatible loot filters with sound packs"
           href="/filters"
           icon="🔍"
         />

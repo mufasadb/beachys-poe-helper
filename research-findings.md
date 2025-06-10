@@ -98,3 +98,117 @@ Based on research, recommended implementation order:
 - Pre-built search strings with one-click copy
 - Visual examples of what each search finds
 - Links to official trade site with search pre-filled where possible
+
+## POE Filter Research Findings
+
+### Filter Categories & Recommendations
+
+#### Racing Filters
+**TyTyKiller Racing Filters**
+- Available through FilterBlade.xyz with different build variants:
+  - Ranged build filter: `?profile=Tytykiller&saveState=AAAARanged&platform=pc`
+  - Melee build filter: `?profile=Tytykiller&saveState=AAAAMelee&platform=pc`  
+  - Caster build filter: `?profile=Tytykiller&saveState=800161&platform=pc`
+- Can be downloaded from FilterBlade or synced directly to POE account
+- Note: TyTyKiller's POE profile filters require authentication to view directly
+
+#### Early Endgame Filters
+**NeverSink's Filter (via FilterBlade)**
+- Use "Strict" strictness for early mapping (yellow/red maps)
+- Most popular and well-maintained filter
+- Excellent quality-of-life features with customization options
+
+**Cyberion's Filter**  
+- Clean design focused on mapping efficiency
+- Color-coded drops with beam effects and sounds
+- Good for players who finished campaign and entering maps
+
+#### Late Endgame Filters
+**NeverSink's "Uber-Strict"**
+- Maximum efficiency for red maps and pinnacle content
+- Minimal visual clutter for speed mapping
+
+**Exosta MF Filter**
+- Specialized for magic find characters
+- Only shows high-value items for speed farming
+- Best for juiced content
+
+**Pecham/LordMatos Filter**
+- Tiered currency filtering
+- Emphasizes high-value currency like Mirrors
+- Good for currency-focused farming
+
+### Sound Packages Research
+
+#### Installation Location
+- POE 1: `%USERPROFILE%/Documents/My Games/Path of Exile`
+- POE 2: `%USERPROFILE%/Documents/My Games/Path of Exile 2`
+- Sound files must match exact filenames (one-to-one replacement)
+- Most sound packs include 8-10 custom audio files
+
+#### Popular Sound Pack Sources
+1. **Mega-Compilation**: 75+ sound packs available on GameFAQs forums
+2. **Diablo 2 Sound Pack**: Classic loot sounds
+3. **Binding of Isaac**: Enemy sounds 
+4. **Anime Character Voices**: Popular anime voice lines
+5. **Tony Hawk's Pro Skater**: Skateboarding sound effects
+6. **StarCraft 2 Terran**: RTS sound effects
+7. **Age of Empires 2**: Classic RTS audio
+8. **Shaper Voicelines**: POE-themed audio
+
+#### Download Links Found
+- Diablo 2: `https://mega.nz/#!IdklhA5A!wI3I1w7Z78bSMOFqVnOPYjhOr8Rpx6AFiOlAdIzrbZk`
+- Binding of Isaac: `https://drive.google.com/file/d/1QSiDkLj_QcYud05SFyuu-8OrfWNy-aij/view`
+- Anime Voices: `https://drive.google.com/drive/folders/1ywZ_aMKlsVjRU5Nyu-5CBXhNRXyPgeCj`
+- Tony Hawk: `https://mega.nz/file/I4JwVCgQ#9-IBN9k7AUjMEXnrICUmAnq9KA0YtBaI6dMviH-Ts9U`
+- StarCraft 2: `https://drive.google.com/file/d/1Qv5Fx6PA-7LqeiQHiV_mhAjtssMVinwO/edit`
+- Age of Empires 2: `https://www.dropbox.com/s/o5w4qo0ykjty40t/aoe2filter.zip?dl=0`
+
+### Installation Process Summary
+
+#### POE 1 Installation
+1. Navigate to `Documents/My Games/Path of Exile`
+2. Place .filter files in this directory
+3. Place sound files (if included) in same directory
+4. Activate via in-game Options > Game tab
+
+#### POE 2 Installation  
+1. Navigate to `Documents/My Games/Path of Exile 2` 
+2. Some sources mention `OnlineFilters` subfolder
+3. Place .filter files in correct location
+4. Activate via in-game options
+
+#### User Experience Considerations
+- Need hover descriptions explaining installation process
+- Should provide both direct download and FilterBlade integration options
+- Include sound preview functionality if possible
+- Clear categorization by use case (racing, early endgame, late endgame)
+- Installation instructions should be simple and visual
+
+### Implementation Recommendations
+
+#### Filter Categories for Our Site
+1. **Racing Filters**
+   - TyTyKiller variants (Ranged/Melee/Caster)
+   - One-click download with sounds included
+
+2. **Early Endgame** 
+   - NeverSink Strict
+   - Cyberion's Clean Filter
+
+3. **Late Endgame**
+   - NeverSink Uber-Strict  
+   - Exosta MF Filter
+   - Pecham Currency-Focused
+
+#### Sound Package Integration
+- Bundle popular sound packs with each filter
+- Provide sound previews on hover
+- Include installation wizard/guide
+- One-click download creates zip with filter + sounds + install guide
+
+#### Technical Implementation Notes
+- FilterBlade API integration for dynamic filter updates
+- Direct download hosting for reliability
+- Backup mirrors for popular filters
+- Automated testing of download links
