@@ -22,8 +22,8 @@ export default function Home() {
         />
         
         <FeatureCard
-          title="Build Lists"
-          description="Browse and manage character builds"
+          title="Build Guides"
+          description="Curated build guides from top content creators for 3.26"
           href="/builds"
           icon="⚔️"
         />
