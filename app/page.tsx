@@ -9,9 +9,16 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <FeatureCard
           title="AutoHotkey Scripts"
-          description="Download essential AHK scripts for POE automation"
-          href="/scripts"
+          description="Download popup scripts for instant access to guides and tools"
+          href="/ahk-download"
           icon="📜"
+        />
+        
+        <FeatureCard
+          title="Popup Configuration"
+          description="Configure hotkey popups for quick access to guides and tools"
+          href="/popup-config"
+          icon="⚙️"
         />
         
         <FeatureCard
