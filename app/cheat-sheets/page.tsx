@@ -338,53 +338,134 @@ function ExpeditionGuide() {
 function HeistGuide() {
   return (
     <div>
-      <h2 className="text-2xl font-bold text-poe-gold mb-6">Heist</h2>
+      <h2 className="text-2xl font-bold text-poe-gold mb-6">Heist Skills & Rewards</h2>
       
+      <div className="mb-6">
+        <div className="bg-gray-800 rounded-lg p-4">
+          <h3 className="text-lg font-semibold text-poe-gold mb-4">Heist Skill Rewards</h3>
+          <div className="space-y-2">
+            <div className="flex items-center justify-between py-2 border-b border-gray-700">
+              <span className="text-white font-medium">Lockpicking</span>
+              <div className="flex gap-2">
+                <span className="text-2xl" title="Currency">💰</span>
+                <span className="text-2xl" title="Fragments">🧩</span>
+                <span className="text-2xl" title="Jewelry">💍</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between py-2 border-b border-gray-700">
+              <span className="text-white font-medium">Brute Force</span>
+              <div className="flex gap-2">
+                <span className="text-2xl" title="Fossils">🦴</span>
+                <span className="text-2xl" title="Uniques">⭐</span>
+                <span className="text-2xl" title="Weapons">⚔️</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between py-2 border-b border-gray-700">
+              <span className="text-white font-medium">Perception</span>
+              <div className="flex gap-2">
+                <span className="text-2xl" title="Divination Cards">🎴</span>
+                <span className="text-2xl" title="Jewelry">💍</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between py-2 border-b border-gray-700">
+              <span className="text-white font-medium">Demolition</span>
+              <div className="flex gap-2">
+                <span className="text-2xl" title="Delirium">🌀</span>
+                <span className="text-2xl" title="Ultimatum">⚡</span>
+                <span className="text-2xl" title="Blight">🕸️</span>
+                <span className="text-2xl" title="Generic">📦</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between py-2 border-b border-gray-700">
+              <span className="text-white font-medium">Trap Disarmament</span>
+              <div className="flex gap-2">
+                <span className="text-2xl" title="Legion">⚔️</span>
+                <span className="text-2xl" title="Abyss">🌊</span>
+                <span className="text-2xl" title="Breach">💥</span>
+                <span className="text-2xl" title="Talisman">🔮</span>
+                <span className="text-2xl" title="Armour">🛡️</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between py-2 border-b border-gray-700">
+              <span className="text-white font-medium">Agility</span>
+              <div className="flex gap-2">
+                <span className="text-2xl" title="Currency">💰</span>
+                <span className="text-2xl" title="Essence">💎</span>
+                <span className="text-2xl" title="Fossils">🦴</span>
+                <span className="text-2xl" title="Harbinger">🌊</span>
+                <span className="text-2xl" title="Armour">🛡️</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between py-2 border-b border-gray-700">
+              <span className="text-white font-medium">Deception</span>
+              <div className="flex gap-2">
+                <span className="text-2xl" title="Divination Cards">🎴</span>
+                <span className="text-2xl" title="Harbinger">🌊</span>
+                <span className="text-2xl" title="Armour">🛡️</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between py-2 border-b border-gray-700">
+              <span className="text-white font-medium">Engineering</span>
+              <div className="flex gap-2">
+                <span className="text-2xl" title="Maps">🗺️</span>
+                <span className="text-2xl" title="Essence">💎</span>
+                <span className="text-2xl" title="Uniques">⭐</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between py-2">
+              <span className="text-white font-medium">Counter-Thaumaturgy</span>
+              <div className="flex gap-2">
+                <span className="text-2xl" title="Currency">💰</span>
+                <span className="text-2xl" title="Jewelry">💍</span>
+                <span className="text-2xl" title="Skill Gems">💠</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-white">Heist Basics</h3>
+          <h3 className="text-xl font-semibold mb-4 text-white">Heist Strategy</h3>
           <div className="space-y-3">
             <div className="bg-gray-800 p-3 rounded">
-              <h4 className="font-semibold text-poe-gold">Rogue Skills</h4>
+              <h4 className="font-semibold text-poe-gold">Currency Farming</h4>
               <ul className="text-sm text-gray-300 mt-2 space-y-1">
-                <li>• Lockpicking (doors and chests)</li>
-                <li>• Trap Disarmament (avoiding damage)</li>
-                <li>• Perception (finding secrets)</li>
-                <li>• Brute Force (breaking barriers)</li>
-                <li>• Engineering (machinery)</li>
+                <li>• Focus on Lockpicking, Agility, Counter-Thaumaturgy</li>
+                <li>• Run currency blueprint reveals</li>
+                <li>• Prioritize high-value currency rooms</li>
               </ul>
             </div>
             <div className="bg-gray-800 p-3 rounded">
-              <h4 className="font-semibold text-poe-gold">Alert Level</h4>
+              <h4 className="font-semibold text-poe-gold">Unique Hunting</h4>
               <ul className="text-sm text-gray-300 mt-2 space-y-1">
-                <li>• Killing monsters raises alert</li>
-                <li>• Opening doors/chests raises alert</li>
-                <li>• High alert = lockdown and escape</li>
-                <li>• Stealth approach often better</li>
+                <li>• Target Brute Force and Engineering</li>
+                <li>• Look for replica unique blueprints</li>
+                <li>• Grand heists have best unique odds</li>
               </ul>
             </div>
           </div>
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-white">Grand Heists</h3>
+          <h3 className="text-xl font-semibold mb-4 text-white">Rogue Selection</h3>
           <div className="space-y-3">
             <div className="bg-gray-800 p-3 rounded">
-              <h4 className="font-semibold text-poe-gold">Valuable Rewards</h4>
+              <h4 className="font-semibold text-poe-gold">Best Rogues by Skill</h4>
               <ul className="text-sm text-gray-300 mt-2 space-y-1">
-                <li>• Experimented items (alt quality)</li>
-                <li>• Replicas and unique items</li>
-                <li>• Enchanted items</li>
-                <li>• Currency and gems</li>
+                <li>• Lockpicking: Karst (reduced alert)</li>
+                <li>• Brute Force: Tibbs (chance to not raise alert)</li>
+                <li>• Demolition: Vinderi (chance to duplicate)</li>
+                <li>• Perception: Nenet (no alert from chests)</li>
               </ul>
             </div>
             <div className="bg-gray-800 p-3 rounded">
-              <h4 className="font-semibold text-poe-gold">Planning Tips</h4>
+              <h4 className="font-semibold text-poe-gold">Grand Heist Tips</h4>
               <ul className="text-sm text-gray-300 mt-2 space-y-1">
-                <li>• Bring rogues with required skills</li>
-                <li>• Level rogue equipment</li>
-                <li>• Plan escape route</li>
-                <li>• Prioritize high-value targets</li>
+                <li>• Bring rogues with all required skills</li>
+                <li>• Level rogue equipment for speed</li>
+                <li>• Plan escape route before lockdown</li>
+                <li>• Save best rewards for last</li>
               </ul>
             </div>
           </div>
