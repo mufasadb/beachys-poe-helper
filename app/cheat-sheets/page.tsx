@@ -1736,9 +1736,9 @@ function IncursionGuide() {
           <div className="bg-gradient-to-r from-green-900/30 to-gray-800 border border-green-600/30 rounded-lg p-4">
             <div className="flex items-center mb-2">
               <img src="/images/items/Support_Skill_Gem_inventory_icon.png" alt="Gem Corruption" className="w-6 h-6 mr-2" />
-              <h4 className="font-semibold text-green-400">Doryani's Institute (T3)</h4>
+              <h4 className="font-semibold text-green-400">Doryani&apos;s Institute (T3)</h4>
             </div>
-            <p className="text-xs text-gray-400 mb-1">T1: Gemcutter's Incubator → T2: Department of Thaumaturgy</p>
+            <p className="text-xs text-gray-400 mb-1">T1: Gemcutter&apos;s Incubator → T2: Department of Thaumaturgy</p>
             <p className="text-sm text-gray-300 mb-2">Corrupts gems with chance for special outcomes</p>
             <p className="text-xs text-green-300">Level 21 gems or +1/+1 corruptions</p>
           </div>
@@ -1785,9 +1785,9 @@ function IncursionGuide() {
           <div className="bg-gradient-to-r from-yellow-900/30 to-gray-800 border border-yellow-600/30 rounded-lg p-4">
             <div className="flex items-center mb-2">
               <img src="/images/items/Support_Skill_Gem_inventory_icon.png" alt="Gem Quality" className="w-6 h-6 mr-2" />
-              <h4 className="font-semibold text-yellow-400">Gemcutter's Workshop (T3)</h4>
+              <h4 className="font-semibold text-yellow-400">Gemcutter&apos;s Workshop (T3)</h4>
             </div>
-            <p className="text-xs text-gray-400 mb-1">T1: Jeweller's Workshop → T2: Lapidary</p>
+            <p className="text-xs text-gray-400 mb-1">T1: Jeweller&apos;s Workshop → T2: Lapidary</p>
             <p className="text-sm text-gray-300 mb-2">Improves gem quality to 20%</p>
             <p className="text-xs text-yellow-300">Useful for skill gem upgrades</p>
           </div>
@@ -1817,13 +1817,13 @@ function IncursionGuide() {
               <img src="/images/items/Unset_Ring_inventory_icon.png" alt="Jewelry" className="w-6 h-6 mr-2" />
               <h4 className="font-semibold text-yellow-400">Jewelry Workshop (T3)</h4>
             </div>
-            <p className="text-xs text-gray-400 mb-1">T1: Jeweller's Workshop → T2: Hall of Lords</p>
+            <p className="text-xs text-gray-400 mb-1">T1: Jeweller&apos;s Workshop → T2: Hall of Lords</p>
             <p className="text-sm text-gray-300 mb-2">Creates and improves jewelry</p>
             <p className="text-xs text-yellow-300">Chance for valuable ring/amulet outcomes</p>
           </div>
           
           <div className="bg-gradient-to-r from-yellow-900/30 to-gray-800 border border-yellow-600/30 rounded-lg p-4">
-            <h4 className="font-semibold text-yellow-400 mb-2">Surveyor's Study (T3)</h4>
+            <h4 className="font-semibold text-yellow-400 mb-2">Surveyor&apos;s Study (T3)</h4>
             <p className="text-sm text-gray-300 mb-2">Upgrades map quality and mods</p>
             <p className="text-xs text-yellow-300">Better map returns and atlas progress</p>
           </div>
@@ -1909,7 +1909,7 @@ function IncursionGuide() {
               <ul className="text-sm text-gray-300 space-y-1">
                 <li>• Plan connections before upgrading</li>
                 <li>• Create paths to multiple high-value rooms</li>
-                <li>• Don't waste connections on low-value rooms</li>
+                <li>• Don&apos;t waste connections on low-value rooms</li>
                 <li>• Consider temple layout when planning</li>
               </ul>
             </div>
@@ -1925,7 +1925,7 @@ function IncursionGuide() {
                 <li>• Clear all connected high-value rooms first</li>
                 <li>• Save corruption chambers for last</li>
                 <li>• Bring valuable items for special rooms</li>
-                <li>• Don't risk valuable items unnecessarily</li>
+                <li>• Don&apos;t risk valuable items unnecessarily</li>
               </ul>
             </div>
             <div className="bg-gray-800 p-4 rounded">
@@ -1951,7 +1951,7 @@ function IncursionGuide() {
           </div>
           <div>
             <span className="font-semibold text-poe-gold">High Priority:</span>
-            <div className="text-gray-300">Locus of Corruption, Doryani's Institute</div>
+            <div className="text-gray-300">Locus of Corruption, Doryani&apos;s Institute</div>
           </div>
           <div>
             <span className="font-semibold text-poe-gold">Safe Profit:</span>
@@ -2040,7 +2040,7 @@ function MercenaryGearGuide() {
             <div className="flex items-center mb-2">
               <img src="/images/items/Doedre%27s_Damning_inventory_icon.png" alt="Doedre's Damning" className="w-6 h-6 mr-3" />
               <div>
-                <h4 className="font-semibold text-orange-400">Doedre's Damning</h4>
+                <h4 className="font-semibold text-orange-400">Doedre&apos;s Damning</h4>
                 <p className="text-xs text-gray-400">Level 30 Ring</p>
               </div>
             </div>
@@ -2061,7 +2061,7 @@ function MercenaryGearGuide() {
                 <p className="text-xs text-gray-400">Level 60+ Various</p>
               </div>
             </div>
-            <p className="text-sm text-gray-300">Depends on your build's requirements</p>
+            <p className="text-sm text-gray-300">Depends on your build&apos;s requirements</p>
           </div>
           
           <div className="bg-gradient-to-br from-orange-900/30 to-gray-800 border border-orange-600/30 rounded-lg p-4">
@@ -2101,7 +2101,7 @@ function MercenaryGearGuide() {
               <li>• Prioritize movement speed items first</li>
               <li>• Look for life rolls on all gear pieces</li>
               <li>• Upgrade weapons regularly for damage</li>
-              <li>• Don't overlook low-level uniques</li>
+              <li>• Don&apos;t overlook low-level uniques</li>
             </ul>
           </div>
           
@@ -2153,7 +2153,7 @@ function MercenaryGearGuide() {
               <li>• High damage rare weapons with links</li>
               <li>• Physical damage vendor recipe weapons</li>
               <li>• Rustic Sash for weapon upgrades</li>
-              <li>• Meginord's Girdle belt for damage/life</li>
+              <li>• Meginord&apos;s Girdle belt for damage/life</li>
               <li>• Brightbeak for utility/movement builds</li>
             </ul>
           </div>
