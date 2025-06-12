@@ -33,8 +33,12 @@ LoadConfig()
 ; Initialize
 TrayTip("POE Popup Helper loaded!`nPress Ctrl+Alt+H for help", AppTitle)
 
-; Default hotkeys (can be overridden by config file)
-RegisterHotkeys()
+; Default hotkeys 
+F1:: ShowPopup("cheat-sheets", "leveling", "Leveling Guide")
+F2:: ShowPopup("cheat-sheets", "atlas", "Atlas Guide") 
+F3:: ShowPopup("vendor-search", "movement-boots", "Boot Search")
+F4:: ShowPopup("dashboard", "trading-economy", "Trading Tools")
+F5:: ShowPopup("vendor-recipes", "currency", "Currency Recipes")
 
 ; Help hotkey
 ^!h:: ShowHelp()
@@ -48,13 +52,13 @@ RegisterHotkeys()
 }
 
 LoadConfig() {
-    ; Set default configuration
+    ; Set default configuration for help display
     Config["popups"] := [
-        {module: "cheat-sheets", category: "leveling", title: "Leveling Guide", hotkey: "F1"},
-        {module: "cheat-sheets", category: "atlas", title: "Atlas Guide", hotkey: "F2"},
-        {module: "vendor-search", category: "movement-boots", title: "Boot Search", hotkey: "F3"},
-        {module: "dashboard", category: "trading-economy", title: "Trading Tools", hotkey: "F4"},
-        {module: "vendor-recipes", category: "currency", title: "Currency Recipes", hotkey: "F5"}
+        {title: "Leveling Guide", hotkey: "F1"},
+        {title: "Atlas Guide", hotkey: "F2"},
+        {title: "Boot Search", hotkey: "F3"},
+        {title: "Trading Tools", hotkey: "F4"},
+        {title: "Currency Recipes", hotkey: "F5"}
     ]
     
     ; Try to load custom config if it exists
@@ -70,25 +74,6 @@ LoadConfig() {
     }
 }
 
-RegisterHotkeys() {
-    ; Register hotkeys from configuration
-    for index, popup in Config["popups"] {
-        if (popup.HasOwnProp("hotkey")) {
-            ; Create hotkey function dynamically
-            hotkey := popup.hotkey
-            module := popup.module
-            category := popup.category
-            title := popup.title
-            
-            ; Register the hotkey
-            try {
-                Hotkey(hotkey, (*) => ShowPopup(module, category, title))
-            } catch Error as e {
-                TrayTip("Error registering hotkey " . hotkey . ": " . e.message, AppTitle)
-            }
-        }
-    }
-}
 
 ShowPopup(module, category, title) {
     popupId := module . "_" . category
@@ -259,17 +244,17 @@ GetBootSearchContent() {
     return "MOVEMENT SPEED BOOTS SEARCH`n`n" .
            "Search Patterns for Vendor/Stash:`n`n" .
            "3 Blue Sockets:`n" .
-           'nt speed.*b-b-b`n`n' .
+           "nt speed.*b-b-b`n`n" .
            "3 Green Sockets:`n" .
-           'nt speed.*g-g-g`n`n' .
+           "nt speed.*g-g-g`n`n" .
            "3 Red Sockets:`n" .
-           'nt speed.*r-r-r`n`n' .
+           "nt speed.*r-r-r`n`n" .
            "2 Blue 1 Green:`n" .
-           'nt speed.*(b-b-g|g-b-b|b-g-b)`n`n' .
+           "nt speed.*(b-b-g|g-b-b|b-g-b)`n`n" .
            "2 Green 1 Blue:`n" .
-           'nt speed.*(g-g-b|b-g-g|g-b-g)`n`n' .
+           "nt speed.*(g-g-b|b-g-g|g-b-g)`n`n" .
            "Mixed Colors:`n" .
-           'nt speed.*(r-g-b|r-b-g|g-r-b)`n`n' .
+           "nt speed.*(r-g-b|r-b-g|g-r-b)`n`n" .
            "Usage: Copy desired pattern and paste into stash search"
 }
 
@@ -341,10 +326,12 @@ ShowHelp() {
 }
 
 ; Cleanup on exit
-OnExit((*) => {
+OnExit(CleanupFunction)
+
+CleanupFunction(*) {
     for id, popup in PopupWindows {
         try {
             popup.gui.Close()
         }
     }
-})
+}
