@@ -1,0 +1,44 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer ring with gradient -->
+  <circle cx="24" cy="24" r="22" stroke="url(#goldGradient)" stroke-width="2" fill="none"/>
+  
+  <!-- Inner hexagon (POE orb style) -->
+  <polygon points="24,8 32,14 32,22 24,28 16,22 16,14" fill="url(#darkGradient)" stroke="url(#goldGradient)" stroke-width="1.5"/>
+  
+  <!-- Central gem/orb -->
+  <circle cx="24" cy="18" r="6" fill="url(#gemGradient)" stroke="#D4AF37" stroke-width="1"/>
+  
+  <!-- Bottom scroll/text area -->
+  <rect x="10" y="30" width="28" height="12" rx="2" fill="url(#scrollGradient)" stroke="url(#goldGradient)" stroke-width="1"/>
+  
+  <!-- Helper text -->
+  <text x="24" y="37" text-anchor="middle" font-family="serif" font-size="8" font-weight="bold" fill="#D4AF37">HELPER</text>
+  
+  <!-- Decorative corner gems -->
+  <circle cx="12" cy="12" r="2" fill="#8B4513" stroke="#D4AF37" stroke-width="0.5"/>
+  <circle cx="36" cy="12" r="2" fill="#8B4513" stroke="#D4AF37" stroke-width="0.5"/>
+  <circle cx="12" cy="36" r="2" fill="#8B4513" stroke="#D4AF37" stroke-width="0.5"/>
+  <circle cx="36" cy="36" r="2" fill="#8B4513" stroke="#D4AF37" stroke-width="0.5"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2D1B69;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="gemGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4169E1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#191970;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="scrollGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a3a3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

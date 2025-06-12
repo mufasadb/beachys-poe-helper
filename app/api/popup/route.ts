@@ -10,11 +10,11 @@ interface PopupContent {
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
-  const module = searchParams.get('module')
+  const moduleName = searchParams.get('module')
   const category = searchParams.get('category')
 
   // Return available modules list if no specific module requested
-  if (!module) {
+  if (!moduleName) {
     const response = NextResponse.json({
       modules: [
         'cheat-sheets',
@@ -38,7 +38,7 @@ export async function GET(request: NextRequest) {
   }
 
   // Route to specific module handlers
-  switch (module) {
+  switch (moduleName) {
     case 'cheat-sheets':
       return getCheatSheetContent(category)
     case 'vendor-search':

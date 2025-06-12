@@ -1,16 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Download, ExternalLink, Info, Volume2 } from 'lucide-react'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
 
 interface Filter {
   name: string
@@ -29,7 +19,7 @@ interface SoundPack {
 }
 
 export default function FiltersPage() {
-  const [selectedSoundPack, setSelectedSoundPack] = useState<string>('default')
+  const [activeTab, setActiveTab] = useState('filters')
 
   const racingFilters: Filter[] = [
     {
@@ -147,13 +137,31 @@ export default function FiltersPage() {
     return baseUrl
   }
 
-  const FilterCard = ({ filter, category }: { filter: Filter; category: string }) => (
-    <Card className="p-4 hover:shadow-lg transition-shadow">
+  const getFilterImage = (filterName: string) => {
+    if (filterName.includes('Racing')) return '/images/items/Academy_Map_%28Settlers%29_inventory_icon.png'
+    if (filterName.includes('Balormage')) return '/images/items/Alleyways_Map_%28Settlers%29_inventory_icon.png'
+    if (filterName.includes('Semi-Strict')) return '/images/items/Chaos_Orb_inventory_icon.png'
+    if (filterName.includes('Strict')) return '/images/items/Exalted_Orb_inventory_icon.png'
+    if (filterName.includes('Very Strict')) return '/images/items/Divine_Orb_inventory_icon.png'
+    if (filterName.includes('Uber Strict')) return '/images/items/The_Fiend_inventory_icon.png'
+    if (filterName.includes('MF Filter')) return '/images/items/Ancient_Orb_inventory_icon.png'
+    return '/images/items/Divination_card_inventory_icon.png'
+  }
+
+  const FilterCard = ({ filter }: { filter: Filter }) => (
+    <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-gray-700 transition-colors">
       <div className="space-y-3">
-        <div>
-          <h3 className="text-lg font-semibold">{filter.name}</h3>
-          <p className="text-sm text-gray-600">{filter.description}</p>
-          <p className="text-xs text-gray-500 mt-1">by {filter.author}</p>
+        <div className="flex items-start">
+          <img 
+            src={getFilterImage(filter.name)} 
+            alt={filter.name} 
+            className="w-10 h-10 mr-3 mt-1 object-contain"
+          />
+          <div className="flex-1">
+            <h3 className="text-lg font-semibold text-poe-gold">{filter.name}</h3>
+            <p className="text-sm text-gray-300">{filter.description}</p>
+            <p className="text-xs text-gray-500 mt-1">by {filter.author}</p>
+          </div>
         </div>
 
         <div className="space-y-2">
@@ -161,15 +169,12 @@ export default function FiltersPage() {
             <div className="space-y-1">
               {filter.saveStates.map((state) => (
                 <div key={state.saveState} className="flex items-center gap-2">
-                  <Button
-                    size="sm"
-                    variant="outline"
+                  <button
                     onClick={() => window.open(getFilterBladeUrl(filter, state.saveState), '_blank')}
-                    className="flex-1"
+                    className="flex-1 px-3 py-2 bg-gray-800 text-gray-300 rounded hover:bg-gray-700 transition-colors text-sm flex items-center justify-center gap-2"
                   >
-                    <Download className="w-3 h-3 mr-1" />
-                    {state.name} Build
-                  </Button>
+                    📥 {state.name} Build
+                  </button>
                 </div>
               ))}
             </div>
@@ -177,51 +182,47 @@ export default function FiltersPage() {
             <div className="space-y-1">
               {filter.strictness.map((level) => (
                 <div key={level} className="flex items-center gap-2">
-                  <Button
-                    size="sm"
-                    variant="outline"
+                  <button
                     onClick={() => window.open(getFilterBladeUrl(filter), '_blank')}
-                    className="flex-1"
+                    className="flex-1 px-3 py-2 bg-gray-800 text-gray-300 rounded hover:bg-gray-700 transition-colors text-sm flex items-center justify-center gap-2"
                   >
-                    <ExternalLink className="w-3 h-3 mr-1" />
-                    {level}
-                  </Button>
+                    🔗 {level}
+                  </button>
                 </div>
               ))}
             </div>
           ) : (
-            <Button
-              size="sm"
-              variant="outline"
+            <button
               onClick={() => window.open(getFilterBladeUrl(filter), '_blank')}
-              className="w-full"
+              className="w-full px-3 py-2 bg-gray-800 text-gray-300 rounded hover:bg-gray-700 transition-colors text-sm flex items-center justify-center gap-2"
             >
-              <ExternalLink className="w-3 h-3 mr-1" />
-              Open in FilterBlade
-            </Button>
+              🔗 Open in FilterBlade
+            </button>
           )}
         </div>
       </div>
-    </Card>
+    </div>
   )
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <h1 className="text-4xl font-bold mb-2">POE Loot Filters</h1>
-      <p className="text-gray-600 mb-8">
-        FilterBlade-compatible filters with sound pack support
-      </p>
+    <main className="min-h-screen p-8 max-w-6xl mx-auto">
+      <header className="mb-8">
+        <h1 className="text-4xl font-bold text-poe-gold mb-4">POE Loot Filters</h1>
+        <p className="text-xl text-gray-300">
+          FilterBlade-compatible filters with sound pack support
+        </p>
+      </header>
 
-      <div className="mb-8 bg-blue-50 border border-blue-200 rounded-lg p-4">
+      <div className="mb-8 bg-blue-950 border border-blue-800 rounded-lg p-4">
         <div className="flex items-start gap-2">
-          <Info className="w-5 h-5 text-blue-600 mt-0.5" />
+          <span className="text-blue-400 text-xl">ℹ️</span>
           <div className="space-y-2 text-sm">
-            <p className="font-semibold text-blue-900">Installation Guide:</p>
-            <ol className="list-decimal list-inside space-y-1 text-blue-800">
+            <p className="font-semibold text-blue-300">Installation Guide:</p>
+            <ol className="list-decimal list-inside space-y-1 text-blue-200">
               <li>Choose a filter below and click to open in FilterBlade</li>
               <li>Customize the filter if desired (optional)</li>
               <li>Download the filter file from FilterBlade</li>
-              <li>Place filter in: <code className="bg-blue-100 px-1">Documents/My Games/Path of Exile</code></li>
+              <li>Place filter in: <code className="bg-blue-900 px-1 rounded">Documents/My Games/Path of Exile</code></li>
               <li>If using custom sounds, place sound files in the same folder</li>
               <li>In-game: Go to Options → Game → Select your filter</li>
             </ol>
@@ -229,106 +230,122 @@ export default function FiltersPage() {
         </div>
       </div>
 
-      <Tabs defaultValue="filters" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="filters">Loot Filters</TabsTrigger>
-          <TabsTrigger value="sounds">Sound Packs</TabsTrigger>
-        </TabsList>
+      <div className="space-y-6">
+        <div className="flex gap-4 border-b border-gray-800">
+          <button
+            onClick={() => setActiveTab('filters')}
+            className={`px-6 py-3 font-semibold transition-colors border-b-2 ${
+              activeTab === 'filters'
+                ? 'text-poe-gold border-poe-gold'
+                : 'text-gray-400 border-transparent hover:text-gray-200'
+            }`}
+          >
+            Loot Filters
+          </button>
+          <button
+            onClick={() => setActiveTab('sounds')}
+            className={`px-6 py-3 font-semibold transition-colors border-b-2 ${
+              activeTab === 'sounds'
+                ? 'text-poe-gold border-poe-gold'
+                : 'text-gray-400 border-transparent hover:text-gray-200'
+            }`}
+          >
+            Sound Packs
+          </button>
+        </div>
 
-        <TabsContent value="filters" className="space-y-6">
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Racing Filters</h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {racingFilters.map((filter) => (
-                <FilterCard key={filter.name} filter={filter} category="racing" />
-              ))}
+        {activeTab === 'filters' && (
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-2xl font-semibold text-poe-gold mb-4">Racing Filters</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {racingFilters.map((filter) => (
+                  <FilterCard key={filter.name} filter={filter} />
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Early Endgame</h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {earlyEndgameFilters.map((filter) => (
-                <FilterCard key={filter.name} filter={filter} category="early-endgame" />
-              ))}
+            <div>
+              <h2 className="text-2xl font-semibold text-poe-gold mb-4">Early Endgame</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {earlyEndgameFilters.map((filter) => (
+                  <FilterCard key={filter.name} filter={filter} />
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Late Endgame</h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {lateEndgameFilters.map((filter) => (
-                <FilterCard key={filter.name} filter={filter} category="late-endgame" />
-              ))}
-            </div>
-          </div>
-        </TabsContent>
-
-        <TabsContent value="sounds" className="space-y-6">
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
-            <div className="flex items-start gap-2">
-              <Volume2 className="w-5 h-5 text-amber-600 mt-0.5" />
-              <div className="text-sm">
-                <p className="font-semibold text-amber-900">Sound Pack Compatibility:</p>
-                <p className="text-amber-800">
-                  All sound packs below work with any FilterBlade-based filter. 
-                  They replace the default POE sounds with custom audio.
-                </p>
+            <div>
+              <h2 className="text-2xl font-semibold text-poe-gold mb-4">Late Endgame</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {lateEndgameFilters.map((filter) => (
+                  <FilterCard key={filter.name} filter={filter} />
+                ))}
               </div>
             </div>
           </div>
+        )}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {soundPacks.map((pack) => (
-              <Card key={pack.name} className="p-4">
-                <h3 className="text-lg font-semibold mb-2">{pack.name}</h3>
-                <p className="text-sm text-gray-600 mb-3">{pack.description}</p>
-                {pack.fileCount > 0 && (
-                  <p className="text-xs text-gray-500 mb-3">
-                    Contains {pack.fileCount} sound files
+        {activeTab === 'sounds' && (
+          <div className="space-y-6">
+            <div className="bg-amber-950 border border-amber-800 rounded-lg p-4 mb-6">
+              <div className="flex items-start gap-2">
+                <span className="text-amber-400 text-xl">🔊</span>
+                <div className="text-sm">
+                  <p className="font-semibold text-amber-300">Sound Pack Compatibility:</p>
+                  <p className="text-amber-200">
+                    All sound packs below work with any FilterBlade-based filter. 
+                    They replace the default POE sounds with custom audio.
                   </p>
-                )}
-                {pack.downloadUrl && (
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          size="sm"
-                          variant="default"
-                          onClick={() => window.open(pack.downloadUrl, '_blank')}
-                          className="w-full"
-                        >
-                          <Download className="w-3 h-3 mr-1" />
-                          Download
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Extract to Documents/My Games/Path of Exile</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                )}
-              </Card>
-            ))}
-          </div>
+                </div>
+              </div>
+            </div>
 
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <h3 className="font-semibold mb-2">FilterBlade Sound Packs</h3>
-            <p className="text-sm text-gray-600 mb-3">
-              FilterBlade also includes built-in streamer sound packs. 
-              Access them when customizing any filter on FilterBlade.
-            </p>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => window.open('https://www.filterblade.xyz/', '_blank')}
-            >
-              <ExternalLink className="w-3 h-3 mr-1" />
-              Browse FilterBlade Sound Options
-            </Button>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {soundPacks.map((pack) => (
+                <div key={pack.name} className="bg-gray-900 border border-gray-800 rounded-lg p-4">
+                  <div className="flex items-center mb-3">
+                    <img 
+                      src="/images/items/Anger_inventory_icon.png" 
+                      alt="Sound Pack" 
+                      className="w-8 h-8 mr-2"
+                    />
+                    <h3 className="text-lg font-semibold text-poe-gold">{pack.name}</h3>
+                  </div>
+                  <p className="text-sm text-gray-300 mb-3">{pack.description}</p>
+                  {pack.fileCount > 0 && (
+                    <p className="text-xs text-gray-500 mb-3">
+                      Contains {pack.fileCount} sound files
+                    </p>
+                  )}
+                  {pack.downloadUrl && (
+                    <button
+                      onClick={() => window.open(pack.downloadUrl, '_blank')}
+                      className="w-full px-3 py-2 bg-poe-gold text-poe-dark rounded font-medium hover:bg-yellow-400 transition-colors text-sm flex items-center justify-center gap-2"
+                      title="Extract to Documents/My Games/Path of Exile"
+                    >
+                      📥 Download
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 p-4 bg-gray-900 border border-gray-800 rounded-lg">
+              <h3 className="font-semibold text-poe-gold mb-2">FilterBlade Sound Packs</h3>
+              <p className="text-sm text-gray-300 mb-3">
+                FilterBlade also includes built-in streamer sound packs. 
+                Access them when customizing any filter on FilterBlade.
+              </p>
+              <button
+                onClick={() => window.open('https://www.filterblade.xyz/', '_blank')}
+                className="px-4 py-2 bg-gray-800 text-gray-300 rounded hover:bg-gray-700 transition-colors text-sm flex items-center gap-2"
+              >
+                🔗 Browse FilterBlade Sound Options
+              </button>
+            </div>
           </div>
-        </TabsContent>
-      </Tabs>
-    </div>
+        )}
+      </div>
+    </main>
   )
 }

@@ -52,7 +52,7 @@ export default function AHKDownload() {
           <h2 className="text-2xl font-bold text-poe-gold mb-4">Download Package</h2>
           
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-white mb-3">What's Included:</h3>
+            <h3 className="text-lg font-semibold text-white mb-3">What&apos;s Included:</h3>
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-center">
                 <span className="text-poe-gold mr-2">•</span>
@@ -159,7 +159,7 @@ export default function AHKDownload() {
               <h3 className="text-lg font-semibold text-white mb-3">Step 4: Run the Script</h3>
               <ol className="text-gray-300 text-sm space-y-1 list-decimal list-inside">
                 <li>Right-click on poe-popup-helper.ahk</li>
-                <li>Select "Compile Script" (optional, for performance)</li>
+                <li>Select &quot;Compile Script&quot; (optional, for performance)</li>
                 <li>Double-click the .ahk file (or .exe if compiled)</li>
                 <li>Look for the system tray icon</li>
               </ol>

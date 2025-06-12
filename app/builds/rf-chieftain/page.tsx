@@ -45,7 +45,7 @@ export default function RFChieftainGuide() {
         <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
           <p className="text-gray-300 mb-4">
             The Righteous Fire Chieftain is the gold standard for beginner builds in Path of Exile. 
-            Created and maintained by Pohx, who has been perfecting this build since the game's release, 
+            Created and maintained by Pohx, who has been perfecting this build since the game&apos;s release, 
             it offers the simplest possible gameplay: activate Righteous Fire and walk through maps while 
             enemies burn around you.
           </p>
@@ -171,7 +171,7 @@ export default function RFChieftainGuide() {
               <h3 className="text-xl font-semibold text-white mb-3">Level 65+: Righteous Fire</h3>
               <p className="text-gray-300 mb-2">
                 Once you have enough life regeneration and fire resistance, switch to Righteous Fire.
-                You'll need approximately 75% fire resistance and 400+ life regen to sustain.
+                You&apos;ll need approximately 75% fire resistance and 400+ life regen to sustain.
               </p>
               <div className="bg-gray-800 p-3 rounded">
                 <code className="text-sm text-green-400">
@@ -302,7 +302,7 @@ export default function RFChieftainGuide() {
         </a>
         <div className="flex gap-4">
           <a href="#" className="text-gray-400 hover:text-poe-gold transition-colors">
-            Next Build: Kay's Summoner →
+            Next Build: Kay&apos;s Summoner →
           </a>
         </div>
       </div>

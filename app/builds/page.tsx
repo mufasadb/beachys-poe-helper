@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function Builds() {
   const [activeTab, setActiveTab] = useState('meta')
@@ -7,9 +8,9 @@ export default function Builds() {
   return (
     <main className="min-h-screen p-8 max-w-7xl mx-auto">
       <header className="mb-8 flex items-center justify-between">
-        <a href="/" className="flex items-center space-x-4">
-          <img src="/images/poe-helper-logo.png" alt="Beachy's POE Helper" className="w-12 h-12" />
-        </a>
+        <Link href="/" className="flex items-center space-x-4">
+          <img src="/images/poe-helper-logo.png" alt="Beachy&apos;s POE Helper" className="w-12 h-12" />
+        </Link>
         <div className="text-center flex-1">
           <h1 className="text-4xl font-bold text-poe-gold mb-4">POE Build Guides</h1>
           <p className="text-xl text-gray-300">
@@ -73,9 +74,9 @@ function MetaBuilds() {
         'Slower than projectile builds'
       ],
       links: [
-        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=volcanic-fissure-berserker' },
-        { name: 'PoB', url: 'https://pobb.in/VF_Berserker_3_26' },
-        { name: 'Build Guide', url: 'https://www.pathofexile.com/forum/view-thread/volcanic-fissure-berserker' }
+        { name: 'Video Guide', url: 'https://www.youtube.com/live/rH7g7YM7eBQ?si=57HZGYxQoD_jKgoq&t=2888' },
+        { name: 'PoB', url: 'https://pobb.in/8au7XbL9E7XY' },
+        { name: 'Build Guide', url: 'https://pobarchives.com/build/CVXTV6KD' }
       ],
       tags: ['S+', 'Melee', 'Fire', 'Slam', 'League Starter']
     },
@@ -100,9 +101,8 @@ function MetaBuilds() {
         'Not the fastest mapper early'
       ],
       links: [
-        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=archmage-vortex-waggle' },
-        { name: 'PoB', url: 'https://pobb.in/Archmage_Vortex_3_26' },
-        { name: 'Written Guide', url: 'https://www.poe-vault.com/guides/archmage-vortex-projection' }
+        { name: 'PoB', url: 'https://pobb.in/2A_4sj_fLSyX' },
+        { name: 'Build Guide', url: 'https://pobarchives.com/build/E3TTj6UM' }
       ],
       tags: ['S+', 'Spell', 'Cold', 'Archmage', 'HC Viable']
     },
@@ -128,8 +128,8 @@ function MetaBuilds() {
       ],
       links: [
         { name: 'PoB', url: 'https://pobb.in/p724XQjNweWx' },
-        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=poison-concoction-ruetoo' },
-        { name: 'Build Guide', url: 'https://www.poe-vault.com/guides/poison-concoction-pathfinder' }
+        { name: 'Video Guide', url: 'https://youtu.be/JWjNC0KWRq8' },
+        { name: 'Written Guide', url: 'https://www.pathofexile.com/forum/view-thread/3286100' }
       ],
       tags: ['S', 'Poison', 'Flask', 'League Starter', 'No Weapon']
     },
@@ -155,8 +155,7 @@ function MetaBuilds() {
       ],
       links: [
         { name: 'PoB', url: 'https://pobb.in/-KNy7XQH5_4O' },
-        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=explosive-concoction-ruetoo' },
-        { name: 'Build Sheet', url: 'https://docs.google.com/spreadsheets/explosive-concoction-slayer' }
+        { name: 'Build Guide', url: 'https://pobarchives.com/build/LqKxrjUg' }
       ],
       tags: ['S', 'Fire', 'Flask', 'League Starter', 'AoE']
     },
@@ -182,8 +181,8 @@ function MetaBuilds() {
       ],
       links: [
         { name: 'PoB', url: 'https://pobb.in/6f-404kwxW2u' },
-        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=lightning-strike-slayer' },
-        { name: 'Build Guide', url: 'https://www.poe-vault.com/guides/lightning-strike-slayer' }
+        { name: 'Written Guide', url: 'https://odealo.com/articles/lightning-strike-slayer-build' },
+        { name: 'Creator Builds', url: 'https://pobarchives.com/builds/VD6nELxN' }
       ],
       tags: ['A+', 'Attack', 'Lightning', 'Projectile', 'Melee']
     },
@@ -207,9 +206,8 @@ function MetaBuilds() {
         'Melee positioning required'
       ],
       links: [
-        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=boneshatter-berserker' },
-        { name: 'PoB', url: 'https://pobb.in/Boneshatter_Berserker_3_26' },
-        { name: 'Build Guide', url: 'https://maxroll.gg/poe/build-guides/boneshatter-berserker' }
+        { name: 'PoB', url: 'https://pobb.in/TB7fhaHktNh6' },
+        { name: 'Build Guide', url: 'https://pobarchives.com/build/ppVNV7dM' }
       ],
       tags: ['A+', 'Melee', 'Physical', 'Trauma', 'Berserker']
     },
@@ -234,9 +232,8 @@ function MetaBuilds() {
         'Medium single target'
       ],
       links: [
-        { name: 'Full Guide', url: 'https://www.pathofexile.com/forum/view-thread/zoomancer-guide' },
-        { name: 'PoB', url: 'https://pobb.in/Zoomancer_Necro_3_26' },
-        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=zoomancer-necro' }
+        { name: 'Build Guide', url: 'https://www.poe-vault.com/guides/zoomancer-necromancer-build-guide' },
+        { name: 'GhazzyTV Hub', url: 'https://www.poe-vault.com/guides/ghazzy-guide-hub' }
       ],
       tags: ['A+', 'Summoner', 'Minions', 'Fast', 'Budget']
     },
@@ -261,9 +258,8 @@ function MetaBuilds() {
         'Less direct control'
       ],
       links: [
-        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=storm-burst-totems' },
-        { name: 'PoB', url: 'https://pobb.in/Storm_Burst_Totems_3_26' },
-        { name: 'Build Guide', url: 'https://www.poe-vault.com/guides/storm-burst-totems' }
+        { name: 'Creator Twitch', url: 'https://www.twitch.tv/tatiantel2' },
+        { name: '3.25 Build', url: 'https://www.pobarchives.com/build/FVRMHiXA' }
       ],
       tags: ['A+', 'Totem', 'Lightning', 'Budget', 'Safe']
     }
@@ -298,7 +294,7 @@ function BeginnerBuilds() {
       difficulty: 'Very Easy',
       cost: 'Low',
       playstyle: 'Walking Simulator',
-      description: 'The gold standard for beginner builds. Activate Righteous Fire and walk through content while enemies burn around you. Pohx\'s comprehensive guides make this perfect for new players.',
+      description: 'The gold standard for beginner builds. Activate Righteous Fire and walk through content while enemies burn around you. Pohx&apos;s comprehensive guides make this perfect for new players.',
       pros: [
         'One-button gameplay',
         'Extremely tanky',
@@ -311,9 +307,8 @@ function BeginnerBuilds() {
         'Struggles with some bosses'
       ],
       links: [
-        { name: 'Official Wiki', url: 'https://pohx.net' },
-        { name: 'Video Guide', url: '#' },
-        { name: 'PoB', url: '#' }
+        { name: 'Official Website', url: 'https://pohx.net/' },
+        { name: 'Written Guide', url: 'https://www.poe-vault.com/guides/righteous-fire-chieftain-build-guide' }
       ],
       tags: ['Fire', 'DoT', 'Tanky', 'Beginner']
     },
@@ -324,7 +319,7 @@ function BeginnerBuilds() {
       difficulty: 'Easy',
       cost: 'Low',
       playstyle: 'Minion Master',
-      description: 'Choose from various minion types including SRS, Skeletons, or Zombies. Kay\'s guides are incredibly detailed with options for every budget and playstyle preference.',
+      description: 'Choose from various minion types including SRS, Skeletons, or Zombies. Kay&apos;s guides are incredibly detailed with options for every budget and playstyle preference.',
       pros: [
         'Minions tank for you',
         'Multiple build variants',
@@ -338,8 +333,7 @@ function BeginnerBuilds() {
       ],
       links: [
         { name: 'Build Planner', url: 'https://kaygaming.netlify.app/minionarmy' },
-        { name: 'Forum Guide', url: '#' },
-        { name: 'Video Series', url: '#' }
+        { name: 'Forum Guide', url: 'https://www.pathofexile.com/forum/view-thread/3179145' }
       ],
       tags: ['Summoner', 'Minions', 'Safe', 'Versatile']
     },
@@ -363,9 +357,8 @@ function BeginnerBuilds() {
         'Squishy without investment'
       ],
       links: [
-        { name: 'TbXie\'s Guide', url: 'https://www.poe-vault.com/guides/toxic-rain-dot-trickster-all-content-build-guide' },
-        { name: 'Leveling Guide', url: '#' },
-        { name: 'PoB', url: '#' }
+        { name: 'PoB', url: 'https://pobb.in/yF_kxTOzhvQ0' },
+        { name: 'Written Guide', url: 'https://maxroll.gg/poe/build-guides/toxic-rain-ballista-pathfinder' }
       ],
       tags: ['Bow', 'Chaos', 'DoT', 'League Starter']
     },
@@ -389,9 +382,8 @@ function BeginnerBuilds() {
         'Can feel slow'
       ],
       links: [
-        { name: 'Build Guide', url: '#' },
-        { name: 'GhazzyTV Video', url: '#' },
-        { name: 'PoB', url: '#' }
+        { name: 'GhazzyTV Hub', url: 'https://www.poe-vault.com/guides/ghazzy-guide-hub' },
+        { name: 'ShakCentral Guide', url: 'https://www.pathofexile.com/forum/view-thread/2661120' }
       ],
       tags: ['Spell', 'Cold', 'DoT', 'Defensive']
     },
@@ -415,9 +407,8 @@ function BeginnerBuilds() {
         'Not purely beginner friendly'
       ],
       links: [
-        { name: 'Build Guide', url: '#' },
-        { name: 'Video Guide', url: '#' },
-        { name: 'PoB', url: '#' }
+        { name: 'Written Guide', url: 'https://maxroll.gg/poe/build-guides/corrupting-fever-gladiator-league-starter-guide' },
+        { name: 'Detailed Guide', url: 'https://odealo.com/articles/corrupting-fever-tornado-shot-gladiator-build' }
       ],
       tags: ['Physical', 'DoT', 'Hybrid', 'Gladiator']
     },
@@ -441,9 +432,8 @@ function BeginnerBuilds() {
         'Not the fastest'
       ],
       links: [
-        { name: '3.26 Guide', url: 'https://www.rpgstash.com/blog/caustic-arrow-of-poison-pathfinder-path-of-exile' },
-        { name: 'Leveling Tips', url: '#' },
-        { name: 'PoB', url: '#' }
+        { name: '3.26 Guide', url: 'https://www.rpgstash.com/blog/326-caustic-arrow-of-poison-pathfinder-build-poe-secrets-of-the-atlas' },
+        { name: 'Video Demo', url: 'https://www.youtube.com/watch?v=UY4dJv2EBUU' }
       ],
       tags: ['Bow', 'Chaos', 'DoT', 'Budget']
     }
@@ -455,7 +445,7 @@ function BeginnerBuilds() {
         <h2 className="text-2xl font-bold text-poe-gold mb-3">About Beginner Builds</h2>
         <p className="text-gray-300">
           These builds have stood the test of time, surviving multiple patches and league mechanics. 
-          They feature comprehensive guides, low gear requirements, and forgiving gameplay that's 
+          They feature comprehensive guides, low gear requirements, and forgiving gameplay that&apos;s 
           perfect for learning Path of Exile.
         </p>
       </div>
