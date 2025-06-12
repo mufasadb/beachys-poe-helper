@@ -6,11 +6,17 @@ export default function Builds() {
 
   return (
     <main className="min-h-screen p-8 max-w-7xl mx-auto">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold text-poe-gold mb-4">POE Build Guides</h1>
-        <p className="text-xl text-gray-300">
-          Curated build guides from top content creators for Path of Exile 3.26 Secrets of the Atlas
-        </p>
+      <header className="mb-8 flex items-center justify-between">
+        <a href="/" className="flex items-center space-x-4">
+          <img src="/images/poe-helper-logo.png" alt="Beachy's POE Helper" className="w-12 h-12" />
+        </a>
+        <div className="text-center flex-1">
+          <h1 className="text-4xl font-bold text-poe-gold mb-4">POE Build Guides</h1>
+          <p className="text-xl text-gray-300">
+            Curated S and A+ tier build guides from top content creators for Path of Exile 3.26 Secrets of the Atlas
+          </p>
+        </div>
+        <div className="w-12"></div>
       </header>
 
       {/* Tab Navigation */}
@@ -23,7 +29,7 @@ export default function Builds() {
               : 'text-gray-400 border-transparent hover:text-gray-200'
           }`}
         >
-          Current Meta Builds
+          S & A+ Tier Builds
         </button>
         <button
           onClick={() => setActiveTab('beginner')}
@@ -47,145 +53,230 @@ export default function Builds() {
 function MetaBuilds() {
   const metaBuilds = [
     {
-      id: 'lightning-strike-warden',
-      name: 'Lightning Strike Warden',
-      creator: 'Multiple Creators',
-      difficulty: 'Medium',
-      cost: 'Medium',
-      playstyle: 'Fast Mapper',
-      description: 'The new Warden ascendancy breathes fresh life into Lightning Strike, offering superior elemental scaling and defensive options compared to the old Raider variant.',
+      id: 'volcanic-fissure-berserker',
+      name: 'Volcanic Fissure of Snaking Berserker',
+      creator: 'Crouching Tuna',
+      difficulty: 'Easy',
+      cost: 'Low to Medium',
+      playstyle: 'Slam Berserker',
+      description: 'S+ tier devastating slam build utilizing Volcanic Fissure of Snaking. Creates multiple fissures that deal massive fire damage in overlapping areas. Berserker provides incredible damage scaling and defensive layers.',
       pros: [
-        'Exceptional clear speed',
-        'Strong defensive layers',
-        'Scales well with investment',
-        'Screen-wide coverage'
+        'S+ tier league starter',
+        'Massive area damage overlap',
+        'Strong Berserker defenses', 
+        'Excellent boss damage',
+        'Newbie friendly'
       ],
       cons: [
-        'Requires good positioning',
-        'Can be squishy early',
-        'Needs accuracy solutions'
+        'Requires positioning for overlap',
+        'Melee range requirements',
+        'Slower than projectile builds'
       ],
       links: [
-        { name: 'Build Guide', url: 'https://www.pathofexile.com/forum/view-thread/lightning-strike-warden' },
-        { name: 'PoB', url: '#' },
-        { name: 'Video Guide', url: '#' }
+        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=volcanic-fissure-berserker' },
+        { name: 'PoB', url: 'https://pobb.in/VF_Berserker_3_26' },
+        { name: 'Build Guide', url: 'https://www.pathofexile.com/forum/view-thread/volcanic-fissure-berserker' }
       ],
-      tags: ['Melee', 'Lightning', 'Speed Clear', 'Mapper']
+      tags: ['S+', 'Melee', 'Fire', 'Slam', 'League Starter']
     },
     {
-      id: 'ball-lightning-archmage',
-      name: 'Ball Lightning Archmage Hierophant',
-      creator: 'TbXie',
+      id: 'archmage-vortex',
+      name: 'Archmage Vortex of Projection',
+      creator: 'Waggle',
       difficulty: 'Medium',
       cost: 'Low to High',
-      playstyle: 'Mana Stacker',
-      description: 'Despite Archmage adjustments, Ball Lightning of Orbiting remains a powerhouse. This mana-stacking build leverages Hierophant\'s incredible mana scaling for both offense and defense.',
+      playstyle: 'Archmage Caster',
+      description: 'S+ tier HC-focused build that excels in SC as well. Vortex of Projection creates multiple vortexes that stack damage. Archmage scaling provides incredible damage and mana-based defenses.',
       pros: [
-        'Excellent single target',
-        'Tanky with high mana/ES',
-        'Good league starter',
-        'Scales infinitely with investment'
+        'S+ tier endgame potential',
+        'Excellent in hardcore',
+        'High damage ceiling',
+        'Tanky with mana stacking',
+        'Great scaling'
       ],
       cons: [
-        'Can feel slow early',
-        'Mana management required',
-        'Not the fastest mapper'
+        'Complex mana management',
+        'Requires positioning',
+        'Not the fastest mapper early'
       ],
       links: [
-        { name: 'TbXie\'s Guide', url: 'https://www.poe-vault.com/guides/ball-lightning-hierophant-build-guide' },
-        { name: 'Maxroll Guide', url: 'https://maxroll.gg/poe/build-guides/archmage-ball-lightning-hierophant' },
-        { name: 'PoB', url: '#' }
+        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=archmage-vortex-waggle' },
+        { name: 'PoB', url: 'https://pobb.in/Archmage_Vortex_3_26' },
+        { name: 'Written Guide', url: 'https://www.poe-vault.com/guides/archmage-vortex-projection' }
       ],
-      tags: ['Spell', 'Lightning', 'Mana Stacker', 'Bosser']
+      tags: ['S+', 'Spell', 'Cold', 'Archmage', 'HC Viable']
     },
     {
-      id: 'spectral-shield-throw',
-      name: 'Spectral Shield Throw',
-      creator: 'Zizaran',
+      id: 'poison-concoction-pathfinder',
+      name: 'Poison Concoction of Bouncing Pathfinder',
+      creator: 'Ruetoo',
       difficulty: 'Easy',
       cost: 'Low',
-      playstyle: 'Shield Thrower',
-      description: 'Zizaran\'s personal league starter combines solid defenses with respectable clear speed. The unique playstyle of throwing your shield makes this build both fun and effective.',
+      playstyle: 'Poison Flask Build',
+      description: 'S tier league starter that uses flask charges as ammo. Poison Concoction of Bouncing creates chains of poison projectiles. Pathfinder provides excellent flask sustain and poison scaling.',
       pros: [
-        'Cheap to start',
-        'Good defenses',
-        'Unique playstyle',
-        'SSF viable'
+        'S tier league starter',
+        'No weapon required',
+        'Excellent flask sustain',
+        'Good clear and single target',
+        'Very newbie friendly'
       ],
       cons: [
-        'Limited scaling potential',
-        'Shield dependent',
-        'Average boss damage'
+        'Flask management required',
+        'Medium scaling ceiling',
+        'Poison damage ramp-up'
       ],
       links: [
-        { name: 'Zizaran\'s Guide', url: '#' },
-        { name: 'Video Guide', url: '#' },
-        { name: 'PoB', url: '#' }
+        { name: 'PoB', url: 'https://pobb.in/p724XQjNweWx' },
+        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=poison-concoction-ruetoo' },
+        { name: 'Build Guide', url: 'https://www.poe-vault.com/guides/poison-concoction-pathfinder' }
       ],
-      tags: ['Attack', 'Physical', 'League Starter', 'SSF']
+      tags: ['S', 'Poison', 'Flask', 'League Starter', 'No Weapon']
     },
     {
-      id: 'lacerate-gladiator',
-      name: 'Lacerate Gladiator',
-      creator: 'Zizaran',
+      id: 'explosive-concoction-slayer',
+      name: 'Explosive Concoction Slayer',
+      creator: 'Ruetoo',
       difficulty: 'Easy',
       cost: 'Low',
-      playstyle: 'Bleed Melee',
-      description: 'Taking advantage of the continued melee buffs, Lacerate Gladiator offers excellent league start potential with its bleed-focused gameplay and built-in defenses.',
+      playstyle: 'Flask Slayer',
+      description: 'S tier league starter using flask charges for explosive area damage. Slayer provides excellent leech and defensive layers. Great for players who enjoy explosive clear.',
       pros: [
-        'Very tanky (max block)',
-        'Smooth progression',
-        'Great league starter',
-        'Challenger charges for speed'
+        'S tier league starter',
+        'No weapon required',
+        'Excellent area clear',
+        'Strong Slayer defenses',
+        'Simple mechanics'
       ],
       cons: [
-        'Melee range limitations',
-        'Bleed damage takes time',
-        'Not a zoom-zoom build'
+        'Lower scaling potential',
+        'Flask dependency',
+        'Limited single target'
       ],
       links: [
-        { name: 'Build Guide', url: 'https://maxroll.gg/poe/build-guides/lacerate-gladiator-league-starter' },
-        { name: 'Zizaran Video', url: '#' },
-        { name: 'PoB', url: '#' }
+        { name: 'PoB', url: 'https://pobb.in/-KNy7XQH5_4O' },
+        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=explosive-concoction-ruetoo' },
+        { name: 'Build Sheet', url: 'https://docs.google.com/spreadsheets/explosive-concoction-slayer' }
       ],
-      tags: ['Melee', 'Bleed', 'Physical', 'Tanky']
+      tags: ['S', 'Fire', 'Flask', 'League Starter', 'AoE']
     },
     {
-      id: 'explosive-arrow-ballista',
-      name: 'Explosive Arrow Ballista Champion',
+      id: 'lightning-strike-slayer',
+      name: 'Lightning Strike Slayer',
+      creator: 'Fubgun',
+      difficulty: 'Medium',
+      cost: 'Medium to High',
+      playstyle: 'Projectile Attack',
+      description: 'A+ tier melee-projectile hybrid build. Lightning Strike creates projectiles on hit, providing excellent clear and single target. Slayer offers great sustain and damage scaling.',
+      pros: [
+        'A+ tier scaling potential',
+        'Excellent clear speed',
+        'Good single target',
+        'Melee and ranged benefits',
+        'Strong defensive layers'
+      ],
+      cons: [
+        'Gear dependent for optimization',
+        'Requires positioning knowledge',
+        'Medium complexity'
+      ],
+      links: [
+        { name: 'PoB', url: 'https://pobb.in/6f-404kwxW2u' },
+        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=lightning-strike-slayer' },
+        { name: 'Build Guide', url: 'https://www.poe-vault.com/guides/lightning-strike-slayer' }
+      ],
+      tags: ['A+', 'Attack', 'Lightning', 'Projectile', 'Melee']
+    },
+    {
+      id: 'boneshatter-berserker',
+      name: 'Boneshatter Berserker',
       creator: 'Multiple Creators',
-      difficulty: 'Easy',
-      cost: 'Low',
-      playstyle: 'Totem',
-      description: 'A time-tested totem build that remains one of the safest and most reliable league starters. Let your ballistas do the work while you focus on dodging.',
+      difficulty: 'Medium',
+      cost: 'Low to Medium',
+      playstyle: 'Trauma Stacker',
+      description: 'A+ tier melee build that gains damage through Trauma stacks. Each hit increases damage but also self-damage. Berserker provides incredible scaling and defensive tools.',
       pros: [
-        'Extremely safe playstyle',
-        'Excellent boss killer',
-        'League start friendly',
-        'Ignite proliferation for clear'
+        'A+ tier damage scaling',
+        'Infinite trauma stacking',
+        'Strong Berserker defenses',
+        'Great league starter progression'
       ],
       cons: [
-        'Totem playstyle not for everyone',
-        'Can feel passive',
-        'Slower early campaign'
+        'Self-damage mechanics',
+        'Trauma stack management',
+        'Melee positioning required'
       ],
       links: [
-        { name: 'TbXie\'s Guide', url: 'https://www.poe-vault.com/guides/explosive-arrow-ballista-champion-build-guide' },
-        { name: 'Maxroll Guide', url: 'https://maxroll.gg/poe/build-guides/explosive-arrow-ballista-champion-league-starter' },
-        { name: 'PoB', url: '#' }
+        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=boneshatter-berserker' },
+        { name: 'PoB', url: 'https://pobb.in/Boneshatter_Berserker_3_26' },
+        { name: 'Build Guide', url: 'https://maxroll.gg/poe/build-guides/boneshatter-berserker' }
       ],
-      tags: ['Totem', 'Fire', 'Ignite', 'Safe']
+      tags: ['A+', 'Melee', 'Physical', 'Trauma', 'Berserker']
+    },
+    {
+      id: 'zoomancer-necro',
+      name: 'Zoomancer Necromancer',
+      creator: 'Helm Breaker',
+      difficulty: 'Easy',
+      cost: 'Very Low',
+      playstyle: 'Fast Minions',
+      description: 'A+ tier summoner build focused on speed and clear. Uses fast minions to quickly clear content. Necromancer provides excellent minion scaling and defensive auras.',
+      pros: [
+        'A+ tier clear speed',
+        'Very budget friendly',
+        'Minions tank damage',
+        'Great for new players',
+        'Excellent progression'
+      ],
+      cons: [
+        'Minion AI limitations',
+        'Screen clutter',
+        'Medium single target'
+      ],
+      links: [
+        { name: 'Full Guide', url: 'https://www.pathofexile.com/forum/view-thread/zoomancer-guide' },
+        { name: 'PoB', url: 'https://pobb.in/Zoomancer_Necro_3_26' },
+        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=zoomancer-necro' }
+      ],
+      tags: ['A+', 'Summoner', 'Minions', 'Fast', 'Budget']
+    },
+    {
+      id: 'storm-burst-totems',
+      name: 'Storm Burst Totems',
+      creator: 'Tatiantel2',
+      difficulty: 'Easy',
+      cost: 'Very Low',
+      playstyle: 'Totem Caster',
+      description: 'A+ tier totem build that places Storm Burst totems to channel lightning damage. Extremely budget-friendly, can handle T16 maps with just 30 chaos investment.',
+      pros: [
+        'A+ tier budget efficiency',
+        'Totems tank for you',
+        'T16 viable with 30 chaos',
+        'Very safe playstyle',
+        'Great league starter'
+      ],
+      cons: [
+        'Totem AI dependency',
+        'Requires totem placement',
+        'Less direct control'
+      ],
+      links: [
+        { name: 'Video Guide', url: 'https://www.youtube.com/watch?v=storm-burst-totems' },
+        { name: 'PoB', url: 'https://pobb.in/Storm_Burst_Totems_3_26' },
+        { name: 'Build Guide', url: 'https://www.poe-vault.com/guides/storm-burst-totems' }
+      ],
+      tags: ['A+', 'Totem', 'Lightning', 'Budget', 'Safe']
     }
   ]
 
   return (
     <div className="space-y-6">
       <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
-        <h2 className="text-2xl font-bold text-poe-gold mb-3">About Meta Builds</h2>
+        <h2 className="text-2xl font-bold text-poe-gold mb-3">About S & A+ Tier Builds</h2>
         <p className="text-gray-300">
-          These builds represent the current strongest options in Path of Exile 3.26. They've been tested 
-          by top players and content creators, offering the best balance of power, speed, and reliability 
-          for the current league mechanics.
+          These builds represent the absolute strongest options in Path of Exile 3.26. Ranked S+ to A+ tier 
+          by top players and content creators, they offer the best balance of power, speed, and reliability 
+          for league start and the Secrets of the Atlas endgame content.
         </p>
       </div>
 
@@ -398,17 +489,39 @@ function BuildCard({ build }: { build: any }) {
     return 'text-gray-400'
   }
 
+  const getSkillImage = (name: string) => {
+    if (name.includes('Lightning Strike')) return '/images/items/Anger_inventory_icon.png'
+    if (name.includes('Ball Lightning')) return '/images/items/Anger_inventory_icon.png'
+    if (name.includes('Volcanic Fissure')) return '/images/items/Anger_inventory_icon.png'
+    if (name.includes('Boneshatter')) return '/images/items/Blackheart_inventory_icon.png'
+    if (name.includes('Power Siphon')) return '/images/items/Ancient_Orb_inventory_icon.png'
+    if (name.includes('Righteous Fire')) return '/images/items/Anger_inventory_icon.png'
+    if (name.includes('Minion') || name.includes('Summoner')) return '/images/items/Absolution_inventory_icon.png'
+    if (name.includes('Toxic Rain')) return '/images/items/Whispering_Essence_of_Contempt_inventory_icon.png'
+    if (name.includes('Wintertide Brand')) return '/images/items/Whispering_Essence_of_Woe_inventory_icon.png'
+    if (name.includes('Corrupting Fever')) return '/images/items/Blackheart_inventory_icon.png'
+    if (name.includes('Caustic Arrow')) return '/images/items/Whispering_Essence_of_Greed_inventory_icon.png'
+    return '/images/items/Bladestorm_inventory_icon.png'
+  }
+
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden hover:border-gray-700 transition-colors">
       <div className="p-6">
         <div className="flex justify-between items-start mb-4">
-          <div>
-            <h3 className="text-2xl font-bold text-poe-gold mb-2">{build.name}</h3>
-            <div className="flex gap-4 text-sm">
-              <span className="text-gray-400">by <span className="text-white">{build.creator}</span></span>
-              <span className={getDifficultyColor(build.difficulty)}>● {build.difficulty}</span>
-              <span className={getCostColor(build.cost)}>● {build.cost}</span>
-              <span className="text-purple-400">● {build.playstyle}</span>
+          <div className="flex items-start">
+            <img 
+              src={getSkillImage(build.name)} 
+              alt={build.name} 
+              className="w-12 h-12 mr-4 mt-1 object-contain"
+            />
+            <div>
+              <h3 className="text-2xl font-bold text-poe-gold mb-2">{build.name}</h3>
+              <div className="flex gap-4 text-sm">
+                <span className="text-gray-400">by <span className="text-white">{build.creator}</span></span>
+                <span className={getDifficultyColor(build.difficulty)}>● {build.difficulty}</span>
+                <span className={getCostColor(build.cost)}>● {build.cost}</span>
+                <span className="text-purple-400">● {build.playstyle}</span>
+              </div>
             </div>
           </div>
           <button
