@@ -14,12 +14,16 @@ CreatePopup(popupConfig) {
     ; Calculate font size based on popup dimensions
     fontSize := CalculateOptimalFontSize(popupConfig.width, popupConfig.height)
     
-    ; Create GUI
+    ; Create GUI (AutoHotkey v1 syntax)
     Gui, %guiName%:New, +AlwaysOnTop -MaximizeBox -MinimizeBox +LastFound, %title%
     Gui, %guiName%:Font, s%fontSize%, Consolas
     
+    ; Calculate control dimensions
+    textWidth := popupConfig.width - 20
+    textHeight := popupConfig.height - 60
+    
     ; Add content text control
-    Gui, %guiName%:Add, Edit, x10 y10 ReadOnly VScroll HScroll, %content%
+    Gui, %guiName%:Add, Edit, x10 y10 ReadOnly VScroll HScroll w%textWidth% h%textHeight%, %content%
     
     ; Add close button
     Gui, %guiName%:Add, Button, gClosePopupButton, Close
