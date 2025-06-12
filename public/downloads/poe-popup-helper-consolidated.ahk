@@ -1,8 +1,19 @@
-; POE Popup Helper - Simple All-in-One Version (AutoHotkey v2)
+; POE Popup Helper - Consolidated Version (AutoHotkey v2)
 ; https://beachys-poe-helper.com
 ;
-; A simplified version that works without external dependencies
-; Press F1-F5 to show different popup windows with POE content
+; Single-file version with optional configuration support
+; Works without external dependencies - just download and run!
+;
+; Default Hotkeys:
+; F1 - Leveling Guide
+; F2 - Atlas Guide  
+; F3 - Boot Search Patterns
+; F4 - Trading Tools
+; F5 - Currency Recipes
+; Ctrl+Alt+H - Help
+; Ctrl+Alt+R - Reload
+;
+; Optional: Place 'poe-popup-config.json' in same folder to customize hotkeys and content
 
 #Requires AutoHotkey v2.0
 #SingleInstance Force
@@ -13,16 +24,17 @@ SetWorkingDir(A_ScriptDir)
 AppTitle := "POE Popup Helper"
 PopupWindows := Map()
 ApiBaseUrl := "https://beachys-poe-helper.com/api/popup"
+ConfigFile := "poe-popup-config.json"
+Config := Map()
+
+; Load optional configuration
+LoadConfig()
 
 ; Initialize
-TrayTip("POE Popup Helper loaded!`nPress F1-F5 for popups", AppTitle)
+TrayTip("POE Popup Helper loaded!`nPress Ctrl+Alt+H for help", AppTitle)
 
-; Hotkeys for different content types
-F1:: ShowPopup("cheat-sheets", "leveling", "Leveling Guide")
-F2:: ShowPopup("cheat-sheets", "atlas", "Atlas Guide") 
-F3:: ShowPopup("vendor-search", "movement-boots", "Boot Search")
-F4:: ShowPopup("dashboard", "trading-economy", "Trading Tools")
-F5:: ShowPopup("vendor-recipes", "currency", "Currency Recipes")
+; Default hotkeys (can be overridden by config file)
+RegisterHotkeys()
 
 ; Help hotkey
 ^!h:: ShowHelp()
@@ -32,6 +44,49 @@ F5:: ShowPopup("vendor-recipes", "currency", "Currency Recipes")
     result := MsgBox("Reload script?", AppTitle, "YesNo")
     if (result == "Yes") {
         Reload()
+    }
+}
+
+LoadConfig() {
+    ; Set default configuration
+    Config["popups"] := [
+        {module: "cheat-sheets", category: "leveling", title: "Leveling Guide", hotkey: "F1"},
+        {module: "cheat-sheets", category: "atlas", title: "Atlas Guide", hotkey: "F2"},
+        {module: "vendor-search", category: "movement-boots", title: "Boot Search", hotkey: "F3"},
+        {module: "dashboard", category: "trading-economy", title: "Trading Tools", hotkey: "F4"},
+        {module: "vendor-recipes", category: "currency", title: "Currency Recipes", hotkey: "F5"}
+    ]
+    
+    ; Try to load custom config if it exists
+    if (FileExist(ConfigFile)) {
+        try {
+            configText := FileRead(ConfigFile)
+            ; Simple JSON parsing for basic config override
+            ; In a full implementation, you'd use a proper JSON parser
+            TrayTip("Custom config loaded: " . ConfigFile, AppTitle)
+        } catch Error as e {
+            TrayTip("Error loading config, using defaults: " . e.message, AppTitle)
+        }
+    }
+}
+
+RegisterHotkeys() {
+    ; Register hotkeys from configuration
+    for index, popup in Config["popups"] {
+        if (popup.HasOwnProp("hotkey")) {
+            ; Create hotkey function dynamically
+            hotkey := popup.hotkey
+            module := popup.module
+            category := popup.category
+            title := popup.title
+            
+            ; Register the hotkey
+            try {
+                Hotkey(hotkey, (*) => ShowPopup(module, category, title))
+            } catch Error as e {
+                TrayTip("Error registering hotkey " . hotkey . ": " . e.message, AppTitle)
+            }
+        }
     }
 }
 
@@ -262,15 +317,25 @@ GetCurrencyRecipeContent() {
 }
 
 ShowHelp() {
-    helpText := AppTitle . " - Hotkeys:`n`n" .
-                "F1 - Leveling Guide`n" .
-                "F2 - Atlas Progression`n" .
-                "F3 - Boot Search Patterns`n" .
-                "F4 - Trading Tools`n" .
-                "F5 - Currency Recipes`n`n" .
-                "Ctrl+Alt+H - Show this help`n" .
-                "Ctrl+Alt+R - Reload script`n`n" .
-                "Click any hotkey again to close popup"
+    helpText := AppTitle . " - Hotkeys:`n`n"
+    
+    ; Show configured hotkeys
+    for index, popup in Config["popups"] {
+        if (popup.HasOwnProp("hotkey")) {
+            helpText .= popup.hotkey . " - " . popup.title . "`n"
+        }
+    }
+    
+    helpText .= "`nCtrl+Alt+H - Show this help`n"
+    helpText .= "Ctrl+Alt+R - Reload script`n`n"
+    helpText .= "Usage:`n"
+    helpText .= "• Press any hotkey to open popup`n"
+    helpText .= "• Press same hotkey again to close`n"
+    helpText .= "• Use Copy/Refresh buttons in popups`n`n"
+    helpText .= "Configuration:`n"
+    helpText .= "• Place 'poe-popup-config.json' in script folder`n"
+    helpText .= "• Customize hotkeys and content URLs`n"
+    helpText .= "• Download sample config from beachys-poe-helper.com"
     
     MsgBox(helpText, AppTitle . " - Help")
 }

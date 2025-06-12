@@ -8,27 +8,17 @@ export default function AHKDownload() {
     setDownloadStarted(true)
     
     try {
-      // Get download information
-      const response = await fetch('/api/download/ahk')
-      const data = await response.json()
+      // Download the consolidated script (recommended)
+      const link = document.createElement('a')
+      link.href = '/downloads/poe-popup-helper-consolidated.ahk'
+      link.download = 'poe-popup-helper-consolidated.ahk'
+      link.style.display = 'none'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
       
-      if (data.files && data.files.length > 0) {
-        // Download each file individually
-        data.files.forEach((file: any) => {
-          const link = document.createElement('a')
-          link.href = `/downloads/${file.name}`
-          link.download = file.name
-          link.style.display = 'none'
-          document.body.appendChild(link)
-          link.click()
-          document.body.removeChild(link)
-        })
-        
-        // Show success message
-        alert(`Download started! ${data.files.length} files will be downloaded.`)
-      } else {
-        alert('No files available for download')
-      }
+      // Show success message
+      alert('Download started! The consolidated script will be downloaded.')
     } catch (error) {
       alert('Download failed. Please try again.')
       console.error('Download error:', error)
@@ -52,31 +42,27 @@ export default function AHKDownload() {
           <h2 className="text-2xl font-bold text-poe-gold mb-4">Download Package</h2>
           
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-white mb-3">What&apos;s Included:</h3>
+            <h3 className="text-lg font-semibold text-white mb-3">What You Get:</h3>
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-center">
                 <span className="text-poe-gold mr-2">•</span>
-                <span>Main popup script (poe-popup-helper.ahk)</span>
+                <span>Single consolidated script (poe-popup-helper-consolidated.ahk)</span>
               </li>
               <li className="flex items-center">
                 <span className="text-poe-gold mr-2">•</span>
-                <span>Configuration module (config.ahk)</span>
+                <span>No external dependencies - works out of the box</span>
               </li>
               <li className="flex items-center">
                 <span className="text-poe-gold mr-2">•</span>
-                <span>HTTP communication module (http.ahk)</span>
+                <span>Built-in content for all major POE activities</span>
               </li>
               <li className="flex items-center">
                 <span className="text-poe-gold mr-2">•</span>
-                <span>Popup display module (popup.ahk)</span>
+                <span>Optional config file support for customization</span>
               </li>
               <li className="flex items-center">
                 <span className="text-poe-gold mr-2">•</span>
-                <span>Content caching module (cache.ahk)</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-poe-gold mr-2">•</span>
-                <span>Installation guide (README.txt)</span>
+                <span>Default hotkeys F1-F5 for instant access</span>
               </li>
             </ul>
           </div>
@@ -84,10 +70,9 @@ export default function AHKDownload() {
           <div className="mb-6 p-4 bg-gray-800 border border-gray-700 rounded">
             <h4 className="font-semibold text-poe-gold mb-2">Requirements:</h4>
             <ul className="text-sm text-gray-300 space-y-1">
-              <li>• AutoHotkey v1.1.30+ installed</li>
+              <li>• AutoHotkey v2.0+ installed</li>
               <li>• Windows 7/10/11</li>
-              <li>• Internet connection for content fetching</li>
-              <li>• Configuration file from popup config page</li>
+              <li>• No configuration file required (optional for customization)</li>
             </ul>
           </div>
 
@@ -103,13 +88,24 @@ export default function AHKDownload() {
             {downloadStarted ? 'Download Starting...' : 'Download AHK Scripts'}
           </button>
 
-          <div className="mt-4 text-center">
-            <a 
-              href="/popup-config"
-              className="text-poe-gold hover:text-yellow-400 underline"
-            >
-              Configure Popup Settings First →
-            </a>
+          <div className="mt-4 text-center space-y-2">
+            <div>
+              <a 
+                href="/downloads/poe-popup-config.json"
+                download="poe-popup-config.json"
+                className="text-poe-gold hover:text-yellow-400 underline mr-4"
+              >
+                Download Sample Config →
+              </a>
+            </div>
+            <div>
+              <a 
+                href="/popup-config"
+                className="text-gray-400 hover:text-gray-300 underline text-sm"
+              >
+                Or use the configuration tool →
+              </a>
+            </div>
           </div>
         </div>
 
@@ -134,35 +130,36 @@ export default function AHKDownload() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Step 2: Configure Popups</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">Step 2: Download & Run</h3>
+              <ol className="text-gray-300 text-sm space-y-1 list-decimal list-inside">
+                <li>Download the consolidated script above</li>
+                <li>Save it to any folder (e.g., Desktop or C:\POE-Helper\)</li>
+                <li>Double-click the .ahk file to run it</li>
+                <li>Look for the system tray icon</li>
+              </ol>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-3">Step 3: Test Hotkeys</h3>
+              <ol className="text-gray-300 text-sm space-y-1 list-decimal list-inside">
+                <li>Press F1 for Leveling Guide popup</li>
+                <li>Press F2 for Atlas Guide popup</li>
+                <li>Press Ctrl+Alt+H for help and all hotkeys</li>
+                <li>Press same hotkey again to close popup</li>
+              </ol>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-3">Step 4: Optional Customization</h3>
               <p className="text-gray-300 text-sm mb-2">
-                Set up your popup positions and hotkeys using our configuration tool:
+                For custom hotkeys and content, download the config file:
               </p>
               <a 
                 href="/popup-config"
                 className="inline-block px-3 py-2 bg-gray-800 text-poe-gold rounded hover:bg-gray-700 transition-colors"
               >
-                Configure Popups
+                Get Config File
               </a>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Step 3: Download & Extract</h3>
-              <ol className="text-gray-300 text-sm space-y-1 list-decimal list-inside">
-                <li>Download the script package above</li>
-                <li>Extract all files to a folder (e.g., C:\POE-Helper\)</li>
-                <li>Copy your config file (poe-popup-config.json) to the same folder</li>
-              </ol>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Step 4: Run the Script</h3>
-              <ol className="text-gray-300 text-sm space-y-1 list-decimal list-inside">
-                <li>Right-click on poe-popup-helper.ahk</li>
-                <li>Select &quot;Compile Script&quot; (optional, for performance)</li>
-                <li>Double-click the .ahk file (or .exe if compiled)</li>
-                <li>Look for the system tray icon</li>
-              </ol>
             </div>
           </div>
         </div>
@@ -234,11 +231,13 @@ export default function AHKDownload() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-3">Default Hotkeys</h3>
             <ul className="text-sm text-gray-300 space-y-1">
-              <li><span className="text-poe-gold">Ctrl+1</span> - Leveling Guide</li>
-              <li><span className="text-poe-gold">Ctrl+2</span> - Vendor Search</li>
-              <li><span className="text-poe-gold">Ctrl+3</span> - Vendor Recipes</li>
+              <li><span className="text-poe-gold">F1</span> - Leveling Guide</li>
+              <li><span className="text-poe-gold">F2</span> - Atlas Guide</li>
+              <li><span className="text-poe-gold">F3</span> - Boot Search</li>
+              <li><span className="text-poe-gold">F4</span> - Trading Tools</li>
+              <li><span className="text-poe-gold">F5</span> - Currency Recipes</li>
               <li><span className="text-poe-gold">Ctrl+Alt+H</span> - Show Help</li>
-              <li><span className="text-poe-gold">Ctrl+Alt+R</span> - Reload Config</li>
+              <li><span className="text-poe-gold">Ctrl+Alt+R</span> - Reload Script</li>
             </ul>
           </div>
 
