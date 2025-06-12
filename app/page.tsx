@@ -3,16 +3,6 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <main className="min-h-screen p-8 max-w-7xl mx-auto">
-      <header className="mb-12 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-4">
-          <img src="/images/poe-helper-logo.png" alt="Beachy&apos;s POE Helper" className="w-16 h-16" />
-          <div>
-            <h1 className="text-5xl font-bold text-poe-gold mb-2">Beachy&apos;s POE Helper</h1>
-            <p className="text-xl text-gray-300">Essential Path of Exile tools for league start and beyond</p>
-          </div>
-        </Link>
-      </header>
-
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <FeatureCard
           title="AutoHotkey Scripts"
