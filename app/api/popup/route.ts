@@ -47,6 +47,8 @@ export async function GET(request: NextRequest) {
       return getDashboardContent(category)
     case 'vendor-recipes':
       return getVendorRecipeContent(category)
+    case 'popup':
+      return getPopupContent(category)
     default:
       return NextResponse.json({ error: 'Invalid module' }, { status: 400 })
   }
@@ -618,4 +620,361 @@ combinations as shown above.`
   }
 
   return NextResponse.json(Object.values(recipeData))
+}
+
+function getPopupContent(category: string | null): NextResponse {
+  // Generate content using the same structure as the components
+  const popupData: Record<string, PopupContent> = {
+    'leveling-guide': {
+      id: 'leveling-guide',
+      title: 'Leveling Quick Ref',
+      category: 'popup',
+      lastUpdated: new Date().toISOString(),
+      content: `
+        <div class="text-xs leading-tight space-y-3">
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Key Zones & Levels</h3>
+            <div class="grid grid-cols-2 gap-2 mt-1 text-[10px]">
+              <div>A1: Coast (2), Mud (4), Ledge (5)</div>
+              <div>A2: Forest (8), Wetlands (12), Vaal (15)</div>
+              <div>A3: City (20), Docks (22), Library (24)</div>
+              <div>A4: Mines (26), Belly (29), Dried (31)</div>
+            </div>
+          </div>
+          
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Resistance Penalties</h3>
+            <div class="text-[10px]">
+              <div>Act 5: -30% all res</div>
+              <div>Act 10: -60% all res</div>
+              <div class="text-yellow-400">Priority: Fire > Cold > Lightning</div>
+            </div>
+          </div>
+          
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Must-Have Items</h3>
+            <div class="text-[10px] space-y-1">
+              <div>• Movement speed boots (10%+)</div>
+              <div>• Quicksilver flask (ASAP)</div>
+              <div>• Life flasks with bleed immunity</div>
+              <div>• Resist gear for act 5 & 10</div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-poe-gold font-bold">Efficiency Tips</h3>
+            <div class="text-[10px] space-y-1">
+              <div>• Stay within 3 levels of zone</div>
+              <div>• Don't over-farm early zones</div>
+              <div>• Complete skill point quests</div>
+              <div>• Use movement skills constantly</div>
+            </div>
+          </div>
+        </div>`
+    },
+    'atlas-quick': {
+      id: 'atlas-quick',
+      title: 'Atlas Quick Reference',
+      category: 'popup',
+      lastUpdated: new Date().toISOString(),
+      content: `
+        <div class="text-xs leading-tight space-y-3">
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Progression Priority</h3>
+            <div class="text-[10px] space-y-1">
+              <div>1. Complete all white map bonuses</div>
+              <div>2. Complete yellow map bonuses (rare)</div>
+              <div>3. Complete red map bonuses (corrupted)</div>
+              <div>4. Maven witness (10 maps)</div>
+            </div>
+          </div>
+          
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">League Start Mechanics</h3>
+            <div class="grid grid-cols-2 gap-2 text-[10px]">
+              <div>
+                <div class="text-yellow-400">Easy Currency:</div>
+                <div>• Essence</div>
+                <div>• Strongbox</div>
+                <div>• Expedition</div>
+              </div>
+              <div>
+                <div class="text-yellow-400">Advanced:</div>
+                <div>• Breach</div>
+                <div>• Delirium</div>
+                <div>• Blight</div>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-poe-gold font-bold">Atlas Passive Strategy</h3>
+            <div class="text-[10px] space-y-1">
+              <div>• Focus on 2-3 mechanics max</div>
+              <div>• Take generic nodes first</div>
+              <div>• Specialize after maven completion</div>
+              <div>• Respec costs 5 orbs of regret</div>
+            </div>
+          </div>
+        </div>`
+    },
+    'movement-boots': {
+      id: 'movement-boots',
+      title: 'Movement Boots Recipe',
+      category: 'popup',
+      lastUpdated: new Date().toISOString(),
+      content: `
+        <div class="text-xs leading-tight space-y-3">
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Recipe</h3>
+            <div class="bg-gray-800 p-2 rounded text-[11px]">
+              <div class="text-yellow-400">Normal Boots + Quicksilver Flask + Augmentation</div>
+              <div class="mt-1">= Magic boots with 10% movement speed</div>
+            </div>
+          </div>
+          
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Search Patterns (Vendor)</h3>
+            <div class="text-[10px] font-mono space-y-1">
+              <div class="text-blue-400">3 Blue: "nt speed".*"b-b-b"</div>
+              <div class="text-green-400">3 Green: "nt speed".*"g-g-g"</div>
+              <div class="text-red-400">3 Red: "nt speed".*"r-r-r"</div>
+              <div class="text-purple-400">RGB: "nt speed".*"[rgb]-[rgb]-[rgb]"</div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-poe-gold font-bold">Priority Order</h3>
+            <div class="text-[10px] space-y-1">
+              <div>1. Any movement speed boots</div>
+              <div>2. Correct socket colors</div>
+              <div>3. Life/resistance rolls</div>
+              <div>4. Base type (Iron, Steel, etc.)</div>
+            </div>
+          </div>
+        </div>`
+    },
+    'trading-quick': {
+      id: 'trading-quick',
+      title: 'Trading Quick Links',
+      category: 'popup',
+      lastUpdated: new Date().toISOString(),
+      content: `
+        <div class="text-xs leading-tight space-y-3">
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Essential Sites</h3>
+            <div class="text-[10px] space-y-1">
+              <div><span class="text-yellow-400">Official Trade:</span> pathofexile.com/trade</div>
+              <div><span class="text-yellow-400">POE Ninja:</span> poe.ninja (prices)</div>
+              <div><span class="text-yellow-400">Awakened Trade:</span> github overlay</div>
+            </div>
+          </div>
+          
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Quick Search Tips</h3>
+            <div class="text-[10px] space-y-1">
+              <div>• Use stat filters for specific mods</div>
+              <div>• Set max price for budget searches</div>
+              <div>• Check "online only" for faster trades</div>
+              <div>• Use pseudo mods for life/resist totals</div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-poe-gold font-bold">Currency Exchange</h3>
+            <div class="text-[10px] space-y-1">
+              <div>• Use currency.poe.ninja for rates</div>
+              <div>• Bulk exchanges save time</div>
+              <div>• Watch for market manipulation</div>
+              <div>• Buy in bulk for better rates</div>
+            </div>
+          </div>
+        </div>`
+    },
+    'vendor-recipes': {
+      id: 'vendor-recipes',
+      title: 'Essential Vendor Recipes',
+      category: 'popup',
+      lastUpdated: new Date().toISOString(),
+      content: `
+        <div class="text-xs leading-tight space-y-2">
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Currency Recipes</h3>
+            <div class="text-[10px] space-y-1">
+              <div><span class="text-yellow-400">Chromatic:</span> RGB linked item</div>
+              <div><span class="text-yellow-400">Jewellers:</span> 6 socket item → 7 jewellers</div>
+              <div><span class="text-yellow-400">Fusing:</span> 6 link item → 20 fusing</div>
+              <div><span class="text-yellow-400">Chaos:</span> Full rare set ilvl 60-74</div>
+            </div>
+          </div>
+          
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Chaos Recipe Items</h3>
+            <div class="grid grid-cols-2 gap-1 text-[10px]">
+              <div>• Weapon (2H or 1H+Shield)</div>
+              <div>• Helmet</div>
+              <div>• Body Armor</div>
+              <div>• Gloves</div>
+              <div>• Boots</div>
+              <div>• Belt</div>
+              <div>• 2x Rings</div>
+              <div>• Amulet</div>
+            </div>
+          </div>
+          
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Weapon Mods</h3>
+            <div class="text-[10px] space-y-1">
+              <div><span class="text-red-400">+1 Fire:</span> Weapon + Ruby Ring + Alt</div>
+              <div><span class="text-blue-400">+1 Cold:</span> Weapon + Sapphire Ring + Alt</div>
+              <div><span class="text-yellow-400">+1 Lightning:</span> Weapon + Topaz Ring + Alt</div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-poe-gold font-bold">Movement Recipe</h3>
+            <div class="text-[10px]">
+              <div><span class="text-green-400">10% Move Speed:</span> Boots + Quicksilver + Aug</div>
+            </div>
+          </div>
+        </div>`
+    },
+    'heist-table': {
+      id: 'heist-table',
+      title: 'Heist Quick Reference',
+      category: 'popup',
+      lastUpdated: new Date().toISOString(),
+      content: `
+        <div class="text-xs leading-tight space-y-3">
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Rogue Skills</h3>
+            <div class="grid grid-cols-2 gap-2 text-[10px]">
+              <div>
+                <div class="text-yellow-400">Physical:</div>
+                <div>• Lockpicking (doors/chests)</div>
+                <div>• Brute Force (barriers)</div>
+                <div>• Demolition (walls)</div>
+              </div>
+              <div>
+                <div class="text-blue-400">Technical:</div>
+                <div>• Engineering (devices)</div>
+                <div>• Trap Disarmament</div>
+                <div>• Perception (secrets)</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Alert Management</h3>
+            <div class="text-[10px] space-y-1">
+              <div>• Killing = high alert gain</div>
+              <div>• Opening doors/chests = medium</div>
+              <div>• Walking = no alert</div>
+              <div>• <span class="text-red-400">Lockdown = mission failed</span></div>
+            </div>
+          </div>
+          
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Valuable Rewards</h3>
+            <div class="text-[10px] space-y-1">
+              <div>• <span class="text-purple-400">Experimented items</span> (alt quality)</div>
+              <div>• <span class="text-yellow-400">Replica uniques</span></div>
+              <div>• <span class="text-green-400">Enchanted weapons/armor</span></div>
+              <div>• <span class="text-blue-400">Currency/gems</span></div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-poe-gold font-bold">Strategy</h3>
+            <div class="text-[10px] space-y-1">
+              <div>• Plan route before starting</div>
+              <div>• Upgrade rogue equipment</div>
+              <div>• Avoid combat when possible</div>
+              <div>• Focus on high-value targets</div>
+            </div>
+          </div>
+        </div>`
+    },
+    'weapon-bases': {
+      id: 'weapon-bases',
+      title: 'Weapon Base Types',
+      category: 'popup',
+      lastUpdated: new Date().toISOString(),
+      content: `
+        <div class="text-xs leading-tight space-y-3">
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Two-Handed Axes</h3>
+            <div class="grid grid-cols-2 gap-2 text-[10px]">
+              <div>
+                <div class="text-yellow-400">High DPS:</div>
+                <div>• Vaal Axe (ilvl 64)</div>
+                <div>• Fleshripper (ilvl 70)</div>
+                <div>• Despot Axe (ilvl 66)</div>
+              </div>
+              <div>
+                <div class="text-green-400">Speed:</div>
+                <div>• Siege Axe (fast)</div>
+                <div>• Reaver Axe (medium)</div>
+                <div>• Headsman Axe (med)</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">One-Handed Axes</h3>
+            <div class="grid grid-cols-2 gap-2 text-[10px]">
+              <div>
+                <div class="text-red-400">High Damage:</div>
+                <div>• Siege Axe (ilvl 60)</div>
+                <div>• Reaver Axe (ilvl 62)</div>
+                <div>• Butcher Axe (ilvl 64)</div>
+              </div>
+              <div>
+                <div class="text-blue-400">Fast:</div>
+                <div>• Tomahawk (1.4 aps)</div>
+                <div>• War Hatchet (1.25)</div>
+                <div>• Cleaver (1.2 aps)</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="border-b border-poe-gold pb-2">
+            <h3 class="text-poe-gold font-bold">Crafting Priority</h3>
+            <div class="text-[10px] space-y-1">
+              <div>1. <span class="text-yellow-400">Item Level 83+</span> (T1 mods)</div>
+              <div>2. <span class="text-green-400">Influenced bases</span> (Elder/Shaper)</div>
+              <div>3. <span class="text-blue-400">6-linked</span> (for 2H weapons)</div>
+              <div>4. <span class="text-purple-400">Good base type</span> (DPS or speed)</div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-poe-gold font-bold">Socket Priority</h3>
+            <div class="text-[10px] space-y-1">
+              <div>• 2H: 6L for main skill</div>
+              <div>• 1H: 3L for support gems</div>
+              <div>• Colors: depends on skill gems</div>
+              <div>• Use jewellers/fusings wisely</div>
+            </div>
+          </div>
+        </div>`
+    }
+  }
+
+  if (category && popupData[category]) {
+    const response = NextResponse.json(popupData[category])
+    
+    // Add performance headers
+    response.headers.set('Cache-Control', 'public, max-age=1800, s-maxage=1800') // 30 minutes
+    response.headers.set('ETag', `"popup-${category}-v1"`)
+    
+    return response
+  }
+
+  // Return all popup categories if no specific category
+  const response = NextResponse.json(Object.values(popupData))
+  response.headers.set('Cache-Control', 'public, max-age=1800, s-maxage=1800')
+  response.headers.set('ETag', `"popup-all-v1"`)
+  
+  return response
 }

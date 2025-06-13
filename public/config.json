@@ -1,0 +1,34 @@
+[
+  {
+    "module": "popup",
+    "category": "leveling-guide",
+    "title": "Leveling Guide",
+    "hotkey": "^F5",
+    "width": 400,
+    "height": 600
+  },
+  {
+    "module": "popup", 
+    "category": "atlas-quick",
+    "title": "Atlas Quick Ref",
+    "hotkey": "^F6",
+    "width": 350,
+    "height": 500
+  },
+  {
+    "module": "popup",
+    "category": "movement-boots", 
+    "title": "Movement Boots",
+    "hotkey": "^F7",
+    "width": 300,
+    "height": 400
+  },
+  {
+    "module": "popup",
+    "category": "vendor-recipes",
+    "title": "Vendor Recipes",
+    "hotkey": "^F8",
+    "width": 380,
+    "height": 520
+  }
+]
