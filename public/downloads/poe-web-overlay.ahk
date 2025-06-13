@@ -260,12 +260,19 @@ ShowHelp() {
     }
     helpText .= "`n`n--- Configuration ---"
     helpText .= "`n^!c - Configure Hotkeys"
-    helpText .= "`n^!m - Toggle Move Mode"
+    helpText .= "`n^!m - Toggle Move Mode (drag to reposition)"
     helpText .= "`n`n--- Other ---"
     helpText .= "`n^!h - Show this help"
     helpText .= "`n^!r - Reload script"
     helpText .= "`n`nNote: F1-F4 are reserved for POE's default functions"
-    MsgBox(helpText, AppTitle . " - Help")
+    helpText .= "`n`nTip: Use Move Mode to drag overlays to permanent positions!"
+    
+    result := MsgBox(helpText . "`n`nPress 'Yes' to activate Move Mode now, 'No' to close help.", AppTitle . " - Help", "YesNo")
+    if (result == "Yes") {
+        if (!MoveMode) {
+            ToggleMoveMode()
+        }
+    }
 }
 
 ConfigureHotkeys() {
