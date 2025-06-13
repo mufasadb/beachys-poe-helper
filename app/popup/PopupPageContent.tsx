@@ -33,17 +33,16 @@ export default function PopupPageContent() {
     )
   }
 
+  const containerStyle = {
+    fontSize: '11px',
+    lineHeight: '1.3',
+    textShadow: '0 0 2px rgba(0,0,0,0.8)'
+  }
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="p-2">
-        <div 
-          className="popup-container text-xs leading-tight" 
-          style={{
-            fontSize: '11px',
-            lineHeight: '1.3',
-            textShadow: '0 0 2px rgba(0,0,0,0.8)'
-          }}
-        >
+        <div className="popup-container text-xs leading-tight" style={containerStyle}>
           <PopupContent 
             category={category} 
             title={POPUP_TITLES[category]}

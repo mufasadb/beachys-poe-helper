@@ -39,36 +39,36 @@ LoadConfig() {
     ; Base configuration that works immediately
     baseConfig := [
         {
-            "module": "popup",
-            "category": "leveling-guide",
-            "title": "Leveling Guide",
-            "hotkey": "^F5",
-            "width": 400,
-            "height": 600
+            module: "popup",
+            category: "leveling-guide",
+            title: "Leveling Guide",
+            hotkey: "^F5",
+            width: 400,
+            height: 600
         },
         {
-            "module": "popup",
-            "category": "atlas-quick",
-            "title": "Atlas Quick Ref",
-            "hotkey": "^F6",
-            "width": 350,
-            "height": 500
+            module: "popup",
+            category: "atlas-quick",
+            title: "Atlas Quick Ref",
+            hotkey: "^F6",
+            width: 350,
+            height: 500
         },
         {
-            "module": "popup",
-            "category": "movement-boots",
-            "title": "Movement Boots",
-            "hotkey": "^F7",
-            "width": 300,
-            "height": 400
+            module: "popup",
+            category: "movement-boots",
+            title: "Movement Boots",
+            hotkey: "^F7",
+            width: 300,
+            height: 400
         },
         {
-            "module": "popup",
-            "category": "vendor-recipes",
-            "title": "Vendor Recipes",
-            "hotkey": "^F8",
-            "width": 380,
-            "height": 520
+            module: "popup",
+            category: "vendor-recipes",
+            title: "Vendor Recipes",
+            hotkey: "^F8",
+            width: 380,
+            height: 520
         }
     ]
     
@@ -121,7 +121,7 @@ SavePositions() {
     iniFile := A_ScriptDir . "/positions.ini"
     for id, popup in PopupWindows {
         WinGetPos(&x, &y, &w, &h, popup["hwnd"])
-        Config["positions"][id] := {"x": x, "y": y}
+        Config["positions"][id] := {x: x, y: y}
         IniWrite(x, iniFile, id, "x")
         IniWrite(y, iniFile, id, "y")
     }
@@ -165,7 +165,7 @@ CreateWebOverlay(popupId, popup) {
     
     myGui := Gui("+AlwaysOnTop -Caption +ToolWindow", popup["title"])
     
-    pos := Config["positions"].Has(popupId) ? Config["positions"][popupId] : {"x": "Center", "y": "Center"}
+    pos := Config["positions"].Has(popupId) ? Config["positions"][popupId] : {x: "Center", y: "Center"}
     myGui.Show("w" . popup["width"] . " h" . popup["height"] . " x" . pos["x"] . " y" . pos["y"] . " Hide")
 
     try {
@@ -187,7 +187,7 @@ CreateWebOverlay(popupId, popup) {
     }
     
     myGui.Show()
-    PopupWindows[popupId] := {"gui": myGui, "hwnd": hwnd, "wvc": wvc, "wv": wv, "popup": popup}
+    PopupWindows[popupId] := {gui: myGui, hwnd: hwnd, wvc: wvc, wv: wv, popup: popup}
 }
 
 ; --- Game Macros ---
