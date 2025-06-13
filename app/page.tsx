@@ -11,12 +11,6 @@ export default function Home() {
         />
         
         <FeatureCard
-          title="Popup Configuration"
-          description="Configure hotkey popups for quick access to guides and tools"
-          href="/popup-config"
-        />
-        
-        <FeatureCard
           title="Build Guides"
           description="Curated build guides from top content creators for 3.26"
           href="/builds"

@@ -8,17 +8,17 @@ export default function AHKDownload() {
     setDownloadStarted(true)
     
     try {
-      // Download the consolidated script (recommended)
+      // Download the new POE Web Overlay script
       const link = document.createElement('a')
-      link.href = '/downloads/poe-popup-helper-consolidated.ahk'
-      link.download = 'poe-popup-helper-consolidated.ahk'
+      link.href = '/downloads/poe-web-overlay.ahk'
+      link.download = 'poe-web-overlay.ahk'
       link.style.display = 'none'
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
       
       // Show success message
-      alert('Download started! The consolidated script will be downloaded.')
+      alert('Download started! The POE Web Overlay script will be downloaded.')
     } catch (error) {
       alert('Download failed. Please try again.')
       console.error('Download error:', error)
@@ -46,11 +46,11 @@ export default function AHKDownload() {
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-center">
                 <span className="text-poe-gold mr-2">•</span>
-                <span>Single consolidated script (poe-popup-helper-consolidated.ahk)</span>
+                <span>POE Web Overlay script (poe-web-overlay.ahk)</span>
               </li>
               <li className="flex items-center">
                 <span className="text-poe-gold mr-2">•</span>
-                <span>No external dependencies - works out of the box</span>
+                <span>Uses WebView2 for modern web-based overlays</span>
               </li>
               <li className="flex items-center">
                 <span className="text-poe-gold mr-2">•</span>
@@ -58,7 +58,7 @@ export default function AHKDownload() {
               </li>
               <li className="flex items-center">
                 <span className="text-poe-gold mr-2">•</span>
-                <span>Optional config file support for customization</span>
+                <span>Dynamic configuration from remote server</span>
               </li>
               <li className="flex items-center">
                 <span className="text-poe-gold mr-2">•</span>
@@ -71,8 +71,9 @@ export default function AHKDownload() {
             <h4 className="font-semibold text-poe-gold mb-2">Requirements:</h4>
             <ul className="text-sm text-gray-300 space-y-1">
               <li>• AutoHotkey v2.0+ installed</li>
-              <li>• Windows 7/10/11</li>
-              <li>• No configuration file required (optional for customization)</li>
+              <li>• Windows 10/11 (WebView2 Runtime)</li>
+              <li>• Required libraries from ahk2_lib GitHub repo</li>
+              <li>• Internet connection for initial setup</li>
             </ul>
           </div>
 
@@ -88,24 +89,14 @@ export default function AHKDownload() {
             {downloadStarted ? 'Download Starting...' : 'Download AHK Scripts'}
           </button>
 
-          <div className="mt-4 text-center space-y-2">
-            <div>
-              <a 
-                href="/downloads/poe-popup-config.json"
-                download="poe-popup-config.json"
-                className="text-poe-gold hover:text-yellow-400 underline mr-4"
-              >
-                Download Sample Config →
-              </a>
-            </div>
-            <div>
-              <a 
-                href="/popup-config"
-                className="text-gray-400 hover:text-gray-300 underline text-sm"
-              >
-                Or use the configuration tool →
-              </a>
-            </div>
+          <div className="mt-4 text-center">
+            <a 
+              href="/downloads/SETUP.md"
+              download="SETUP.md"
+              className="text-poe-gold hover:text-yellow-400 underline"
+            >
+              Download Setup Guide →
+            </a>
           </div>
         </div>
 
@@ -130,36 +121,36 @@ export default function AHKDownload() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Step 2: Download & Run</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">Step 2: Setup Libraries</h3>
               <ol className="text-gray-300 text-sm space-y-1 list-decimal list-inside">
-                <li>Download the consolidated script above</li>
-                <li>Save it to any folder (e.g., Desktop or C:\POE-Helper\)</li>
+                <li>Download the POE Web Overlay script above</li>
+                <li>Create a &apos;Lib&apos; folder next to the script</li>
+                <li>Download libraries from: <a href="https://github.com/thqby/ahk2_lib" target="_blank" className="text-poe-gold hover:text-yellow-400">thqby/ahk2_lib</a></li>
+                <li>Extract WebView2/ and ComVar.ahk to the Lib folder</li>
+              </ol>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-3">Step 3: Run & Test</h3>
+              <ol className="text-gray-300 text-sm space-y-1 list-decimal list-inside">
                 <li>Double-click the .ahk file to run it</li>
-                <li>Look for the system tray icon</li>
-              </ol>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Step 3: Test Hotkeys</h3>
-              <ol className="text-gray-300 text-sm space-y-1 list-decimal list-inside">
-                <li>Press F1 for Leveling Guide popup</li>
-                <li>Press F2 for Atlas Guide popup</li>
+                <li>Press F1 for Leveling Guide overlay</li>
+                <li>Press F2 for Atlas Guide overlay</li>
                 <li>Press Ctrl+Alt+H for help and all hotkeys</li>
-                <li>Press same hotkey again to close popup</li>
+                <li>Press Ctrl+Alt+M to enter Move Mode for repositioning</li>
               </ol>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-white mb-3">Step 4: Optional Customization</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">Step 4: Position Overlays</h3>
               <p className="text-gray-300 text-sm mb-2">
-                For custom hotkeys and content, download the config file:
+                Use Move Mode to position overlays exactly where you want them:
               </p>
-              <a 
-                href="/popup-config"
-                className="inline-block px-3 py-2 bg-gray-800 text-poe-gold rounded hover:bg-gray-700 transition-colors"
-              >
-                Get Config File
-              </a>
+              <ol className="text-gray-300 text-sm space-y-1 list-decimal list-inside">
+                <li>Press Ctrl+Alt+M to enter Move Mode</li>
+                <li>Drag overlays to desired positions</li>
+                <li>Press Ctrl+Alt+M again to save positions</li>
+              </ol>
             </div>
           </div>
         </div>
@@ -238,28 +229,31 @@ export default function AHKDownload() {
               <li><span className="text-poe-gold">F5</span> - Currency Recipes</li>
               <li><span className="text-poe-gold">Ctrl+Alt+H</span> - Show Help</li>
               <li><span className="text-poe-gold">Ctrl+Alt+R</span> - Reload Script</li>
+              <li><span className="text-poe-gold">Ctrl+Alt+M</span> - Toggle Move Mode</li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold text-white mb-3">Troubleshooting</h3>
             <ul className="text-sm text-gray-300 space-y-1">
-              <li>• Ensure AutoHotkey is installed</li>
-              <li>• Check config file is present</li>
-              <li>• Verify internet connection</li>
+              <li>• Ensure AutoHotkey v2.0+ is installed</li>
+              <li>• Check WebView2 Runtime is installed</li>
+              <li>• Verify Lib folder structure is correct</li>
+              <li>• Ensure internet connection works</li>
               <li>• Run as administrator if needed</li>
               <li>• Check Windows antivirus settings</li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white mb-3">Customization</h3>
+            <h3 className="text-lg font-semibold text-white mb-3">Features</h3>
             <ul className="text-sm text-gray-300 space-y-1">
-              <li>• Modify hotkeys in config</li>
-              <li>• Adjust popup positions/sizes</li>
-              <li>• Enable/disable specific popups</li>
-              <li>• Change content refresh rates</li>
-              <li>• Customize popup appearance</li>
+              <li>• Web-based overlays with modern UI</li>
+              <li>• Draggable positioning with Move Mode</li>
+              <li>• Auto-saves overlay positions</li>
+              <li>• Dynamic content from server</li>
+              <li>• Transparent overlays when not in Move Mode</li>
+              <li>• Always-on-top for easy access</li>
             </ul>
           </div>
         </div>

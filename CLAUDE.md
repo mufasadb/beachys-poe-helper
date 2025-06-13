@@ -72,4 +72,13 @@ README must include:
 - Test command: `npm test`
 - Lint command: `npm run lint`
 - Build command: `npm run build`
-- Dev server: `npm run dev`
+- Dev server: `npm run dev` (runs on port 3002)
+
+## Development Server
+- **Local URL**: http://localhost:3002
+- **Note**: Use port 3002 to avoid conflicts with other services running on 3000/3001
+
+## Memories
+- Always verify server status and response before instructing a user to check a page or server
+- **CRITICAL**: NEVER tell user the server is running without actually verifying it works by making a web request first
+- Use mcp__fetch__fetch or mcp__puppeteer__puppeteer_navigate to verify the server is responding before declaring success
