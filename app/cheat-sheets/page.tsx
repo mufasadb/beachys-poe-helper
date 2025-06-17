@@ -1573,55 +1573,191 @@ function BetrayalGuide() {
     <div>
       <div className="flex items-center mb-6">
         <img src="/images/items/Blackheart_inventory_icon.png" alt="Betrayal" className="w-6 h-6 mr-3" />
-        <h2 className="text-2xl font-bold text-poe-gold">Betrayal Board</h2>
+        <h2 className="text-2xl font-bold text-poe-gold">Betrayal Board - Syndicate Reference</h2>
       </div>
       
+      {/* Member Positioning Priority Table */}
+      <div className="mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-white">Member Positioning Priority</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse border border-gray-700">
+            <thead>
+              <tr className="bg-gray-800">
+                <th className="border border-gray-700 px-3 py-2 text-left text-poe-gold">Member</th>
+                <th className="border border-gray-700 px-3 py-2 text-center text-poe-gold">Transportation</th>
+                <th className="border border-gray-700 px-3 py-2 text-center text-poe-gold">Research</th>
+                <th className="border border-gray-700 px-3 py-2 text-center text-poe-gold">Fortification</th>
+                <th className="border border-gray-700 px-3 py-2 text-center text-poe-gold">Intervention</th>
+              </tr>
+            </thead>
+            <tbody className="text-sm">
+              <tr className="bg-gray-900/50">
+                <td className="border border-gray-700 px-3 py-2 font-semibold text-white">It That Fled</td>
+                <td className="border border-gray-700 px-3 py-2 text-center">🟢 Pure Breachstones</td>
+                <td className="border border-gray-700 px-3 py-2 text-center">🟢 Pure Breachstones</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+              </tr>
+              <tr className="bg-gray-900/30">
+                <td className="border border-gray-700 px-3 py-2 font-semibold text-white">Aisling</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center">🟢 Veiled Crafts</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+              </tr>
+              <tr className="bg-gray-900/50">
+                <td className="border border-gray-700 px-3 py-2 font-semibold text-white">Vorici</td>
+                <td className="border border-gray-700 px-3 py-2 text-center">🟢 White Sockets</td>
+                <td className="border border-gray-700 px-3 py-2 text-center">🟡 White Sockets</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+              </tr>
+              <tr className="bg-gray-900/30">
+                <td className="border border-gray-700 px-3 py-2 font-semibold text-white">Tora</td>
+                <td className="border border-gray-700 px-3 py-2 text-center">🟢 Gem XP</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+              </tr>
+              <tr className="bg-gray-900/50">
+                <td className="border border-gray-700 px-3 py-2 font-semibold text-white">Cameria</td>
+                <td className="border border-gray-700 px-3 py-2 text-center">🟢 Harbinger Orbs</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center">🟡 Sulphite Scarabs</td>
+              </tr>
+              <tr className="bg-gray-900/30">
+                <td className="border border-gray-700 px-3 py-2 font-semibold text-white">Gravicius</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center">🟢 Divination Scarabs</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+              </tr>
+              <tr className="bg-gray-900/50">
+                <td className="border border-gray-700 px-3 py-2 font-semibold text-white">Janus</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center">🟡 Currency/Uniques</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+              </tr>
+              <tr className="bg-gray-900/30">
+                <td className="border border-gray-700 px-3 py-2 font-semibold text-white">Leo</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center">🟡 Exalt Slam</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+                <td className="border border-gray-700 px-3 py-2 text-center text-gray-500">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-2 text-xs text-gray-400">
+          <span className="text-green-400">🟢 High Priority</span> • 
+          <span className="text-yellow-400 ml-2">🟡 Medium Priority</span> • 
+          <span className="text-gray-500 ml-2">- Low/No Value</span>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-white">Syndicate Positions</h3>
+          <h3 className="text-xl font-semibold mb-4 text-white">Detailed Rewards</h3>
           <div className="space-y-3">
             <div className="bg-gray-800 p-3 rounded">
-              <h4 className="font-semibold text-poe-gold">Transportation</h4>
+              <h4 className="font-semibold text-poe-gold">Transportation (Rank 3)</h4>
               <ul className="text-sm text-gray-300 mt-2 space-y-1">
-                <li>• It That Fled (pure breachstones)</li>
-                <li>• Vorici (white sockets)</li>
-                <li>• Tora (gem experience)</li>
-                <li>• Cameria (harbinger orbs)</li>
+                <li>• <span className="text-green-400">It That Fled:</span> Upgrades Breachstones to Pure</li>
+                <li>• <span className="text-green-400">Vorici:</span> 1-3 White Sockets</li>
+                <li>• <span className="text-green-400">Tora:</span> Gem gains 40% more XP</li>
+                <li>• <span className="text-green-400">Cameria:</span> 3-5 Harbinger Orbs</li>
               </ul>
             </div>
             <div className="bg-gray-800 p-3 rounded">
-              <h4 className="font-semibold text-poe-gold">Research</h4>
+              <h4 className="font-semibold text-poe-gold">Research (Rank 3)</h4>
               <ul className="text-sm text-gray-300 mt-2 space-y-1">
-                <li>• It That Fled (pure breachstones)</li>
-                <li>• Aisling (crafting bench)</li>
-                <li>• Vorici (white sockets)</li>
-                <li>• Janus (uniques/currency)</li>
+                <li>• <span className="text-green-400">It That Fled:</span> Upgrades Breachstones to Pure</li>
+                <li>• <span className="text-green-400">Aisling:</span> Adds Veiled Modifier</li>
+                <li>• <span className="text-yellow-400">Vorici:</span> 1-2 White Sockets</li>
+                <li>• <span className="text-yellow-400">Leo:</span> Exalt Slam (risky)</li>
+              </ul>
+            </div>
+            <div className="bg-gray-800 p-3 rounded">
+              <h4 className="font-semibold text-poe-gold">Fortification (Rank 3)</h4>
+              <ul className="text-sm text-gray-300 mt-2 space-y-1">
+                <li>• <span className="text-green-400">Gravicius:</span> 2-4 Divination Scarabs</li>
+                <li>• <span className="text-yellow-400">Haku:</span> 3-5 Chaos Orbs</li>
+                <li>• <span className="text-yellow-400">Tora:</span> 2-4 Rogue's Markers</li>
+              </ul>
+            </div>
+            <div className="bg-gray-800 p-3 rounded">
+              <h4 className="font-semibold text-poe-gold">Intervention (Rank 3)</h4>
+              <ul className="text-sm text-gray-300 mt-2 space-y-1">
+                <li>• <span className="text-yellow-400">Cameria:</span> 2-4 Sulphite Scarabs</li>
+                <li>• <span className="text-yellow-400">Rin:</span> 2-4 Cartography Scarabs</li>
+                <li>• <span className="text-yellow-400">Guff:</span> Double Corruption Temple</li>
               </ul>
             </div>
           </div>
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-white">Board Management</h3>
+          <h3 className="text-xl font-semibold mb-4 text-white">Board Management Strategy</h3>
           <div className="space-y-3">
             <div className="bg-gray-800 p-3 rounded">
-              <h4 className="font-semibold text-poe-gold">Optimal Setup</h4>
+              <h4 className="font-semibold text-poe-gold">Optimal Setup Process</h4>
+              <ol className="text-sm text-gray-300 mt-2 space-y-1 list-decimal list-inside">
+                <li>Remove unwanted members via Interrogate</li>
+                <li>Get It That Fled to Research/Transportation R3</li>
+                <li>Get Aisling to Research R3 for crafts</li>
+                <li>Position Vorici in Transportation R3</li>
+                <li>Remove all other members from valuable positions</li>
+                <li>Execute when board is optimal</li>
+              </ol>
+            </div>
+            <div className="bg-gray-800 p-3 rounded">
+              <h4 className="font-semibold text-poe-gold">Decision Making</h4>
               <ul className="text-sm text-gray-300 mt-2 space-y-1">
-                <li>• Get It That Fled to Research rank 3</li>
-                <li>• Aisling in Research for crafts</li>
-                <li>• Vorici in Transportation/Research</li>
-                <li>• Remove/demote unwanted members</li>
+                <li>• <span className="text-green-400">Bargain:</span> Move members between divisions</li>
+                <li>• <span className="text-blue-400">Execute:</span> Get reward and remove member</li>
+                <li>• <span className="text-red-400">Interrogate:</span> Remove member from board</li>
+                <li>• <span className="text-yellow-400">Betray:</span> Create rivalries for more encounters</li>
               </ul>
             </div>
             <div className="bg-gray-800 p-3 rounded">
-              <h4 className="font-semibold text-poe-gold">Strategy Tips</h4>
+              <h4 className="font-semibold text-poe-gold">Advanced Tips</h4>
               <ul className="text-sm text-gray-300 mt-2 space-y-1">
-                <li>• Interrogate to remove members</li>
-                <li>• Execute when boards are optimal</li>
-                <li>• Bargain to move/rank up members</li>
-                <li>• Betray to create rivalries</li>
+                <li>• Block Research with trusted members</li>
+                <li>• Use rivalries to guarantee encounters</li>
+                <li>• Only execute when member is Rank 3</li>
+                <li>• Keep backup members in non-priority divisions</li>
+                <li>• Reset board if too many wrong members</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Reference */}
+      <div className="mt-8 bg-gradient-to-r from-yellow-900/20 to-yellow-800/20 border border-yellow-600/30 rounded-lg p-6">
+        <h3 className="text-xl font-semibold mb-4 text-yellow-400">Quick Reference - Must Have Positions</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-gray-800/50 p-3 rounded text-center">
+            <div className="text-green-400 font-semibold">Transportation R3</div>
+            <div className="text-sm text-gray-300 mt-1">It That Fled</div>
+            <div className="text-xs text-gray-400">Pure Breachstones</div>
+          </div>
+          <div className="bg-gray-800/50 p-3 rounded text-center">
+            <div className="text-green-400 font-semibold">Research R3</div>
+            <div className="text-sm text-gray-300 mt-1">Aisling</div>
+            <div className="text-xs text-gray-400">Veiled Crafts</div>
+          </div>
+          <div className="bg-gray-800/50 p-3 rounded text-center">
+            <div className="text-green-400 font-semibold">Transportation R3</div>
+            <div className="text-sm text-gray-300 mt-1">Vorici</div>
+            <div className="text-xs text-gray-400">White Sockets</div>
+          </div>
+          <div className="bg-gray-800/50 p-3 rounded text-center">
+            <div className="text-green-400 font-semibold">Transportation R3</div>
+            <div className="text-sm text-gray-300 mt-1">Cameria</div>
+            <div className="text-xs text-gray-400">Harbinger Orbs</div>
           </div>
         </div>
       </div>
