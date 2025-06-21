@@ -109,7 +109,7 @@ function LevelingGuide() {
               <span className="text-gray-400">+</span>
               <img src="/images/items/rustic-sash.png" alt="Rustic Sash" className="w-6 h-6" title="Rustic Sash" />
               <span className="text-gray-400">+</span>
-              <img src="/images/items/whetstone.png" alt="Blacksmith's Whetstone" className="w-6 h-6" title="Blacksmith's Whetstone" />
+              <img src="/images/items/whetstone.png" alt="Blacksmith&apos;s Whetstone" className="w-6 h-6" title="Blacksmith&apos;s Whetstone" />
             </div>
             <p className="text-xs text-yellow-400">Result: Weapon with %increased Physical Damage modifier</p>
           </div>
@@ -1684,7 +1684,7 @@ function BetrayalGuide() {
               <ul className="text-sm text-gray-300 mt-2 space-y-1">
                 <li>• <span className="text-green-400">Gravicius:</span> 2-4 Divination Scarabs</li>
                 <li>• <span className="text-yellow-400">Haku:</span> 3-5 Chaos Orbs</li>
-                <li>• <span className="text-yellow-400">Tora:</span> 2-4 Rogue's Markers</li>
+                <li>• <span className="text-yellow-400">Tora:</span> 2-4 Rogue&apos;s Markers</li>
               </ul>
             </div>
             <div className="bg-gray-800 p-3 rounded">
@@ -2174,7 +2174,7 @@ function MercenaryGearGuide() {
           
           <div className="bg-gradient-to-br from-orange-900/30 to-gray-800 border border-orange-600/30 rounded-lg p-4">
             <div className="flex items-center mb-2">
-              <img src="/images/items/Doedre%27s_Damning_inventory_icon.png" alt="Doedre's Damning" className="w-6 h-6 mr-3" />
+              <img src="/images/items/Doedre%27s_Damning_inventory_icon.png" alt="Doedre&apos;s Damning" className="w-6 h-6 mr-3" />
               <div>
                 <h4 className="font-semibold text-orange-400">Doedre&apos;s Damning</h4>
                 <p className="text-xs text-gray-400">Level 30 Ring</p>
