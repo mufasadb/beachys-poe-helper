@@ -314,7 +314,7 @@ function BeginnerBuilds() {
     },
     {
       id: 'minion-army',
-      name: 'Kay\'s Summoner Builds',
+      name: 'Kay&apos;s Summoner Builds',
       creator: 'Kay Gaming',
       difficulty: 'Easy',
       cost: 'Low',

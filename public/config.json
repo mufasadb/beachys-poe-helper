@@ -30,5 +30,13 @@
     "hotkey": "^F8",
     "width": 380,
     "height": 520
+  },
+  {
+    "module": "popup",
+    "category": "settlers",
+    "title": "Settlers Guide",
+    "hotkey": "^F9",
+    "width": 400,
+    "height": 500
   }
 ]

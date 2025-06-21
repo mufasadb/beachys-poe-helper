@@ -5,7 +5,7 @@ describe('Home', () => {
   it('renders the main heading', () => {
     render(<Home />)
     
-    const heading = screen.getByText("Beachy's POE Helper")
+    const heading = screen.getByText("Beachy&apos;s POE Helper")
     expect(heading).toBeInTheDocument()
   })
 

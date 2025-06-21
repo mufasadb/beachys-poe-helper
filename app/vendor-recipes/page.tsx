@@ -26,11 +26,11 @@ function CurrencyRecipes() {
       resultAlt: "Chromatic Orb"
     },
     {
-      name: "Jeweller's Orb",
+      name: "Jeweller&apos;s Orb",
       ingredients: "Any item with 6 sockets",
       result: "7x",
       resultImage: "/images/items/jewellers-orb.png",
-      resultAlt: "Jeweller's Orb"
+      resultAlt: "Jeweller&apos;s Orb"
     },
     {
       name: "Fusing Orb",

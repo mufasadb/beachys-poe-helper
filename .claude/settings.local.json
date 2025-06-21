@@ -39,7 +39,10 @@
       "Bash(npx tsc:*)",
       "Bash(node:*)",
       "Bash(timeout:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(PORT=3002 npm run dev)",
+      "Bash(npm test)",
+      "Bash(find:*)"
     ],
     "deny": []
   }

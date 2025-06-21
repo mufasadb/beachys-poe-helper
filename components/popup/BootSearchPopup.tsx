@@ -4,10 +4,10 @@ export default function BootSearchPopup() {
       <div>
         <h3 className="text-poe-gold font-bold mb-2">Vendor Search Patterns</h3>
         <div className="text-[10px] font-mono space-y-1">
-          <div className="text-blue-400">"nt speed".*"b-b-b" (3 Blue sockets)</div>
-          <div className="text-green-400">"nt speed".*"g-g-g" (3 Green sockets)</div>
-          <div className="text-red-400">"nt speed".*"r-r-r" (3 Red sockets)</div>
-          <div className="text-purple-400">"nt speed".*"[rgb]-[rgb]-[rgb]" (RGB)</div>
+          <div className="text-blue-400">{`"nt speed".*"b-b-b"`} (3 Blue sockets)</div>
+          <div className="text-green-400">{`"nt speed".*"g-g-g"`} (3 Green sockets)</div>
+          <div className="text-red-400">{`"nt speed".*"r-r-r"`} (3 Red sockets)</div>
+          <div className="text-purple-400">{`"nt speed".*"[rgb]-[rgb]-[rgb]"`} (RGB)</div>
         </div>
       </div>
       

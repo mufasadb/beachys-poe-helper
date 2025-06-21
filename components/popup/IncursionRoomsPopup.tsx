@@ -8,15 +8,15 @@ export default function IncursionRoomsPopup() {
             <div className="text-green-400 font-semibold mb-1">Must Have (T3):</div>
             <div>• Apex of Ascension (+1 skill point)</div>
             <div>• Locus of Corruption (double corrupt)</div>
-            <div>• Doryani's Institute (upgrade gems)</div>
+            <div>• Doryani{`'`}s Institute (upgrade gems)</div>
             <div>• Factory (engineer orbs)</div>
           </div>
           
           <div>
             <div className="text-yellow-400 font-semibold mb-1">High Value (T3):</div>
             <div>• Currency Exchange (currency)</div>
-            <div>• Gemcutter's Workshop (gem quality)</div>
-            <div>• Cartographer's Room (maps)</div>
+            <div>• Gemcutter{`'`}s Workshop (gem quality)</div>
+            <div>• Cartographer{`'`}s Room (maps)</div>
             <div>• Museum of Artifacts (unique items)</div>
           </div>
           

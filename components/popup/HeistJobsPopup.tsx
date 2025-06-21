@@ -6,27 +6,27 @@ export default function HeistJobsPopup() {
         <div className="text-[10px] space-y-2">
           <div className="flex items-center gap-2">
             <span className="text-yellow-400 font-semibold w-20">Lockpicking:</span>
-            <span>Karst (5) > Huck (3) > Niles (3)</span>
+            <span>Karst (5) {'>'} Huck (3) {'>'} Niles (3)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-blue-400 font-semibold w-20">Demolition:</span>
-            <span>Vinderi (5) > Huck (3) > Niles (2)</span>
+            <span>Vinderi (5) {'>'} Huck (3) {'>'} Niles (2)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-green-400 font-semibold w-20">Engineering:</span>
-            <span>Huck (5) > Vinderi (3) > Niles (2)</span>
+            <span>Huck (5) {'>'} Vinderi (3) {'>'} Niles (2)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-purple-400 font-semibold w-20">Perception:</span>
-            <span>Niles (5) > Gianna (3) > Karst (2)</span>
+            <span>Niles (5) {'>'} Gianna (3) {'>'} Karst (2)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-red-400 font-semibold w-20">Brute Force:</span>
-            <span>Tibbs (5) > Huck (2) > Tullina (2)</span>
+            <span>Tibbs (5) {'>'} Huck (2) {'>'} Tullina (2)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-orange-400 font-semibold w-20">Deception:</span>
-            <span>Gianna (5) > Niles (3) > Tullina (2)</span>
+            <span>Gianna (5) {'>'} Niles (3) {'>'} Tullina (2)</span>
           </div>
         </div>
       </div>
