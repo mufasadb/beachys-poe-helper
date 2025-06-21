@@ -4,10 +4,21 @@ export default function VendorRecipesPopup() {
       <div className="border-b border-poe-gold pb-2">
         <h3 className="text-poe-gold font-bold">Currency Recipes</h3>
         <div className="text-[10px] space-y-1">
-          <div><span className="text-yellow-400">Chromatic:</span> RGB linked item</div>
-          <div><span className="text-yellow-400">Jewellers:</span> 6 socket item → 7 jewellers</div>
-          <div><span className="text-yellow-400">Fusing:</span> 6 link item → 20 fusing</div>
-          <div><span className="text-yellow-400">Chaos:</span> Full rare set ilvl 60-74</div>
+          <div className="flex items-center gap-1">
+            <img src="/images/popup/Chromatic_Orb_inventory_icon.png" alt="Chromatic" className="w-3 h-3 inline" />
+            <span className="text-yellow-400">Chromatic:</span> RGB linked item
+          </div>
+          <div className="flex items-center gap-1">
+            <img src="/images/popup/Jeweller%27s_Orb_inventory_icon.png" alt="Jewellers" className="w-3 h-3 inline" />
+            <span className="text-yellow-400">Jewellers:</span> 6 socket item → 7 jewellers
+          </div>
+          <div className="flex items-center gap-1">
+            <span className="text-yellow-400">Fusing:</span> 6 link item → 20 fusing
+          </div>
+          <div className="flex items-center gap-1">
+            <img src="/images/popup/Chaos_Orb_inventory_icon.png" alt="Chaos" className="w-3 h-3 inline" />
+            <span className="text-yellow-400">Chaos:</span> Full rare set ilvl 60-74
+          </div>
         </div>
       </div>
       
@@ -37,7 +48,15 @@ export default function VendorRecipesPopup() {
       <div>
         <h3 className="text-poe-gold font-bold">Movement Recipe</h3>
         <div className="text-[10px]">
-          <div><span className="text-green-400">10% Move Speed:</span> Boots + Quicksilver + Aug</div>
+          <div className="flex items-center gap-1">
+            <span className="text-green-400">10% Move Speed:</span>
+            <img src="/images/popup/Iron_Greaves_inventory_icon.png" alt="Boots" className="w-3 h-3 inline" />
+            Boots + 
+            <img src="/images/popup/Quicksilver_Flask_inventory_icon.png" alt="Quicksilver" className="w-3 h-3 inline" />
+            Quicksilver + 
+            <img src="/images/popup/Orb_of_Augmentation_inventory_icon.png" alt="Aug" className="w-3 h-3 inline" />
+            Aug
+          </div>
         </div>
       </div>
     </div>

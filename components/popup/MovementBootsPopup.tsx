@@ -4,7 +4,14 @@ export default function MovementBootsPopup() {
       <div className="border-b border-poe-gold pb-2">
         <h3 className="text-poe-gold font-bold">Recipe</h3>
         <div className="bg-gray-800 p-2 rounded text-[11px]">
-          <div className="text-yellow-400">Normal Boots + Quicksilver Flask + Augmentation</div>
+          <div className="text-yellow-400 flex items-center gap-1">
+            <img src="/images/popup/Iron_Greaves_inventory_icon.png" alt="Boots" className="w-4 h-4 inline" />
+            Normal Boots + 
+            <img src="/images/popup/Quicksilver_Flask_inventory_icon.png" alt="Quicksilver Flask" className="w-4 h-4 inline" />
+            Quicksilver Flask + 
+            <img src="/images/popup/Orb_of_Augmentation_inventory_icon.png" alt="Augmentation" className="w-4 h-4 inline" />
+            Augmentation
+          </div>
           <div className="mt-1">= Magic boots with 10% movement speed</div>
         </div>
       </div>

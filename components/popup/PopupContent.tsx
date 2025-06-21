@@ -5,6 +5,15 @@ import TradingQuickPopup from './TradingQuickPopup'
 import VendorRecipesPopup from './VendorRecipesPopup'
 import HeistTablePopup from './HeistTablePopup'
 import WeaponBasesPopup from './WeaponBasesPopup'
+import SettlersPopup from './SettlersPopup'
+import CurrencyRecipesPopup from './CurrencyRecipesPopup'
+import ChaosRecipePopup from './ChaosRecipePopup'
+import WeaponModsPopup from './WeaponModsPopup'
+import MovementRecipePopup from './MovementRecipePopup'
+import BootSearchPopup from './BootSearchPopup'
+import TwoHandWeaponsPopup from './TwoHandWeaponsPopup'
+import OneHandWeaponsPopup from './OneHandWeaponsPopup'
+import WeaponCraftingPopup from './WeaponCraftingPopup'
 
 interface PopupContentProps {
   category: string
@@ -28,6 +37,24 @@ export default function PopupContent({ category, title }: PopupContentProps) {
         return <HeistTablePopup />
       case 'weapon-bases':
         return <WeaponBasesPopup />
+      case 'settlers':
+        return <SettlersPopup />
+      case 'currency-recipes':
+        return <CurrencyRecipesPopup />
+      case 'chaos-recipe':
+        return <ChaosRecipePopup />
+      case 'weapon-mods':
+        return <WeaponModsPopup />
+      case 'movement-recipe':
+        return <MovementRecipePopup />
+      case 'boot-search':
+        return <BootSearchPopup />
+      case 'two-hand-weapons':
+        return <TwoHandWeaponsPopup />
+      case 'one-hand-weapons':
+        return <OneHandWeaponsPopup />
+      case 'weapon-crafting':
+        return <WeaponCraftingPopup />
       default:
         return (
           <div className="text-red-400 text-center p-4">

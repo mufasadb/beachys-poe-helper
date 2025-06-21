@@ -6,8 +6,14 @@ export default function WeaponBasesPopup() {
         <div className="grid grid-cols-2 gap-2 text-[10px]">
           <div>
             <div className="text-yellow-400">High DPS:</div>
-            <div>• Vaal Axe (ilvl 64)</div>
-            <div>• Fleshripper (ilvl 70)</div>
+            <div className="flex items-center gap-1">
+              <img src="/images/popup/Vaal_Axe_inventory_icon.png" alt="Vaal Axe" className="w-3 h-3 inline" />
+              • Vaal Axe (ilvl 64)
+            </div>
+            <div className="flex items-center gap-1">
+              <img src="/images/popup/Fleshripper_inventory_icon.png" alt="Fleshripper" className="w-3 h-3 inline" />
+              • Fleshripper (ilvl 70)
+            </div>
             <div>• Despot Axe (ilvl 66)</div>
           </div>
           <div>
