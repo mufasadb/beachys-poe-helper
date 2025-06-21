@@ -14,6 +14,13 @@ import BootSearchPopup from './BootSearchPopup'
 import TwoHandWeaponsPopup from './TwoHandWeaponsPopup'
 import OneHandWeaponsPopup from './OneHandWeaponsPopup'
 import WeaponCraftingPopup from './WeaponCraftingPopup'
+import HeistJobsPopup from './HeistJobsPopup'
+import BetrayalBoardPopup from './BetrayalBoardPopup'
+import ExpeditionModsPopup from './ExpeditionModsPopup'
+import SanctumRoomsPopup from './SanctumRoomsPopup'
+import IncursionRoomsPopup from './IncursionRoomsPopup'
+import DelveNodesPopup from './DelveNodesPopup'
+import SettlersShipsPopup from './SettlersShipsPopup'
 
 interface PopupContentProps {
   category: string
@@ -55,6 +62,20 @@ export default function PopupContent({ category, title }: PopupContentProps) {
         return <OneHandWeaponsPopup />
       case 'weapon-crafting':
         return <WeaponCraftingPopup />
+      case 'heist-jobs':
+        return <HeistJobsPopup />
+      case 'betrayal-board':
+        return <BetrayalBoardPopup />
+      case 'expedition-mods':
+        return <ExpeditionModsPopup />
+      case 'sanctum-rooms':
+        return <SanctumRoomsPopup />
+      case 'incursion-rooms':
+        return <IncursionRoomsPopup />
+      case 'delve-nodes':
+        return <DelveNodesPopup />
+      case 'settlers-ships':
+        return <SettlersShipsPopup />
       default:
         return (
           <div className="text-red-400 text-center p-4">

@@ -19,7 +19,14 @@ const POPUP_TITLES: Record<string, string> = {
   'boot-search': 'Boot Search',
   'two-hand-weapons': '2H Weapons',
   'one-hand-weapons': '1H Weapons',
-  'weapon-crafting': 'Weapon Crafting'
+  'weapon-crafting': 'Weapon Crafting',
+  'heist-jobs': 'Heist Jobs',
+  'betrayal-board': 'Betrayal Board',
+  'expedition-mods': 'Expedition Mods',
+  'sanctum-rooms': 'Sanctum Rooms',
+  'incursion-rooms': 'Incursion Rooms',
+  'delve-nodes': 'Delve Nodes',
+  'settlers-ships': 'Settlers Ships'
 }
 
 export default function PopupPageContent() {
