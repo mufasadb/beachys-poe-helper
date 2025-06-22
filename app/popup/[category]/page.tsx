@@ -7,7 +7,8 @@ const POPUP_TITLES: Record<string, string> = {
   'trading-quick': 'Trading Links',
   'vendor-recipes': 'Vendor Recipes',
   'heist-table': 'Heist Quick Ref',
-  'weapon-bases': 'Weapon Bases'
+  'weapon-bases': 'Weapon Bases',
+  'settlers': 'Settlers Guide'
 }
 
 interface PopupPageProps {
