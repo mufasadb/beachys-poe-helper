@@ -4,39 +4,39 @@
     "category": "leveling-guide",
     "title": "Leveling Guide",
     "hotkey": "^F5",
-    "width": 400,
-    "height": 600
+    "width": 800,
+    "height": 1200
   },
   {
     "module": "popup", 
     "category": "atlas-quick",
     "title": "Atlas Quick Ref",
     "hotkey": "^F6",
-    "width": 350,
-    "height": 500
+    "width": 700,
+    "height": 1000
   },
   {
     "module": "popup",
     "category": "movement-boots", 
     "title": "Movement Boots",
     "hotkey": "^F7",
-    "width": 300,
-    "height": 400
+    "width": 600,
+    "height": 800
   },
   {
     "module": "popup",
     "category": "vendor-recipes",
     "title": "Vendor Recipes",
     "hotkey": "^F8",
-    "width": 380,
-    "height": 520
+    "width": 760,
+    "height": 1040
   },
   {
     "module": "popup",
     "category": "settlers",
     "title": "Settlers Guide",
     "hotkey": "^F9",
-    "width": 400,
-    "height": 500
+    "width": 800,
+    "height": 1000
   }
 ]
