@@ -27,12 +27,15 @@ export default async function PopupCategoryPage({ params }: PopupPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <div className="p-4">
-        <div className="popup-container text-base leading-normal" style={{
-          fontSize: '20px',
-          lineHeight: '1.5',
-          textShadow: '0 0 2px rgba(0,0,0,0.8)'
+    <div className="min-h-screen bg-gray-900 text-white overflow-auto">
+      <div className="p-2">
+        <div className="popup-container" style={{
+          fontSize: '32px',
+          lineHeight: '1.4',
+          textShadow: '0 0 3px rgba(0,0,0,0.9)',
+          transform: 'scale(1.5)',
+          transformOrigin: 'top left',
+          width: '66.67%'
         }}>
           <PopupContent 
             category={category} 

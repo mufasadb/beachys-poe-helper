@@ -19,44 +19,83 @@ body {
   min-height: 100vh;
 }
 
-/* Popup-specific styles for larger display */
+/* Popup-specific styles for much larger display */
+.popup-container h2 {
+  font-size: 3rem !important;
+  margin-bottom: 1.5rem !important;
+  font-weight: bold !important;
+}
+
 .popup-container h3 {
-  font-size: 1.5rem !important;
-  margin-bottom: 0.75rem;
+  font-size: 2.5rem !important;
+  margin-bottom: 1.25rem !important;
+  font-weight: bold !important;
 }
 
 .popup-container div {
-  font-size: 1.125rem !important;
+  font-size: 1.75rem !important;
 }
 
 .popup-container .text-[10px] {
-  font-size: 1rem !important;
+  font-size: 1.5rem !important;
 }
 
 .popup-container .text-[11px] {
-  font-size: 1.125rem !important;
+  font-size: 1.625rem !important;
 }
 
 .popup-container .text-xs {
-  font-size: 1rem !important;
+  font-size: 1.5rem !important;
 }
 
+.popup-container .text-sm {
+  font-size: 1.75rem !important;
+}
+
+.popup-container .text-base {
+  font-size: 2rem !important;
+}
+
+/* Scale up images significantly */
+.popup-container img {
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+  transform: scale(2.5) !important;
+  transform-origin: top left !important;
+  margin: 1rem 2rem 2rem 2rem !important;
+}
+
+/* Adjust spacing for larger content */
 .popup-container .space-y-1 > * {
-  margin-top: 0.5rem;
+  margin-top: 1rem !important;
+}
+
+.popup-container .space-y-2 > * {
+  margin-top: 1.5rem !important;
 }
 
 .popup-container .space-y-3 > * {
-  margin-top: 1.5rem;
+  margin-top: 2rem !important;
 }
 
 .popup-container .pb-2 {
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem !important;
 }
 
 .popup-container .mt-1 {
-  margin-top: 0.5rem;
+  margin-top: 1rem !important;
 }
 
 .popup-container .gap-2 {
-  gap: 1rem;
+  gap: 1.5rem !important;
+}
+
+/* Ensure lists have proper spacing */
+.popup-container ul, .popup-container ol {
+  margin-left: 2rem !important;
+}
+
+.popup-container li {
+  margin-bottom: 0.75rem !important;
 }
